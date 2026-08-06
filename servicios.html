@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios y tienda — Aldo Agro</title>
+<meta name="description" content="Catálogo de maquinaria, repuestos y servicios técnicos de Aldo Agro. Diseño tipo tienda con amplio surtido de equipos agrícolas.">
+<link rel="canonical" href="https://www.aldoagro.com/servicios.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aldo Agro">
+<meta property="og:locale" content="es_HN">
+<meta property="og:title" content="Servicios y tienda — Aldo Agro">
+<meta property="og:description" content="Catálogo de maquinaria, repuestos y servicios técnicos de Aldo Agro. Diseño tipo tienda con amplio surtido de equipos agrícolas.">
+<meta property="og:url" content="https://www.aldoagro.com/servicios.html">
+<meta property="og:image" content="https://www.aldoagro.com/imagenes/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Servicios y tienda — Aldo Agro">
+<meta name="twitter:description" content="Catálogo de maquinaria, repuestos y servicios técnicos de Aldo Agro. Diseño tipo tienda con amplio surtido de equipos agrícolas.">
+<meta name="twitter:image" content="https://www.aldoagro.com/imagenes/logo.png">
+<link rel="icon" type="image/png" href="imagenes/logoquienessomon.png">
+<link rel="apple-touch-icon" href="imagenes/logoquienessomon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde:#1B8A5A;
+    --verde-oscuro:#115C3C;
+    --verde-claro:#EAF7F0;
+    --azul:#2E86AB;
+    --azul-oscuro:#1F6382;
+    --azul-claro:#E7F4F9;
+    --tinta:#16261F;
+    --papel:#FBFDFC;
+    --gris:#5B6B64;
+    --borde:#DCEAE3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--tinta);
+    background:var(--papel);
+    line-height:1.6;
+  }
+  h1,h2,h3,.logo{ font-family:'Space Grotesk', sans-serif; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1200px; margin:0 auto; padding:0 24px; }
+
+  /* Header — mismo estilo */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,253,252,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--borde);
+  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1200px; margin:0 auto;}
+  .logo{ font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px;}
+  .logo-mark{
+    width:28px; height:28px; border-radius:7px;
+    background:linear-gradient(135deg, var(--verde) 50%, var(--azul) 50%);
+    flex-shrink:0;
+  }
+  nav ul{ list-style:none; display:flex; gap:28px; }
+  nav ul a{ font-weight:500; font-size:15px; color:var(--gris); transition:color .2s; }
+  nav ul a:hover, nav ul a.active{ color:var(--verde-oscuro); }
+  .btn{
+    display:inline-block; padding:12px 24px; border-radius:8px;
+    font-weight:600; font-size:15px; transition:transform .15s, box-shadow .15s; border:none; cursor:pointer;
+  }
+  .btn-primary{ background:var(--verde); color:#fff; }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(27,138,90,.3); }
+  .btn-outline{ border:1.5px solid var(--azul); color:var(--azul-oscuro); background:transparent; }
+  .btn-outline:hover{ background:var(--azul-claro); }
+  .btn-sm{ padding:8px 16px; font-size:13px; }
+  .nav-cta{ display:none; }
+  @media(min-width:780px){ .nav-cta{ display:inline-block; } }
+  .nav-links{ display:none; }
+  @media(min-width:780px){ .nav-links{ display:flex; } }
+
+  .mobile-controls{ display:flex; align-items:center; gap:10px; }
+  @media(min-width:780px){ .mobile-controls{ display:none; } }
+  .icon-btn{
+    width:40px; height:40px; border-radius:10px; border:1px solid var(--borde);
+    background:#fff; display:flex; align-items:center; justify-content:center;
+    font-size:17px; cursor:pointer; color:var(--tinta);
+  }
+  .mobile-panel{
+    display:none; flex-direction:column; gap:14px;
+    padding:18px 24px 22px; border-top:1px solid var(--borde);
+    background:var(--papel);
+  }
+  .mobile-panel.open{ display:flex; }
+  .mobile-panel ul{ list-style:none; display:flex; flex-direction:column; gap:4px; }
+  .mobile-panel ul a{
+    display:block; padding:12px 6px; font-weight:600; font-size:15px;
+    border-bottom:1px solid var(--borde); color:var(--tinta);
+  }
+  @media(min-width:780px){ .mobile-panel{ display:none !important; } }
+
+  /* Page hero */
+  .breadcrumb{ background:var(--verde-claro); border-bottom:1px solid var(--borde); }
+  .breadcrumb .wrap{ padding:10px 24px; font-size:12.5px; color:var(--gris); display:flex; gap:6px; align-items:center; max-width:1200px; }
+  .breadcrumb a{ color:var(--verde-oscuro); font-weight:600; }
+  .page-hero{
+    padding:56px 24px 48px;
+    background:
+      radial-gradient(circle at 10% 30%, rgba(46,134,171,.10), transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(27,138,90,.12), transparent 45%);
+    border-bottom:1px solid var(--borde);
+  }
+  .page-hero .wrap{ display:flex; flex-direction:column; gap:12px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--verde-oscuro); background:var(--verde-claro);
+    padding:6px 14px; border-radius:100px; width:fit-content;
+  }
+  .page-hero h1{
+    font-size:clamp(28px, 4vw, 42px); font-weight:700; letter-spacing:-.01em;
+  }
+  .page-hero p{ color:var(--gris); font-size:17px; max-width:560px; }
+
+  /* Toolbar tienda */
+  .shop-toolbar{
+    background:#fff; border-bottom:1px solid var(--borde);
+    position:sticky; top:73px; z-index:40;
+  }
+  .toolbar-inner{
+    max-width:1200px; margin:0 auto; padding:14px 24px;
+    display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
+  }
+  .filters{ display:flex; gap:8px; flex-wrap:wrap; }
+  .filter-btn{
+    padding:8px 16px; border-radius:100px; border:1px solid var(--borde);
+    background:#fff; font-size:13px; font-weight:500; color:var(--gris);
+    cursor:pointer; transition:all .2s; font-family:inherit;
+  }
+  .filter-btn:hover, .filter-btn.active{
+    background:var(--verde); color:#fff; border-color:var(--verde);
+  }
+  .search-shop{
+    display:flex; align-items:center; gap:8px;
+    background:var(--verde-claro); border:1px solid var(--borde);
+    border-radius:100px; padding:8px 8px 8px 16px; width:min(260px, 100%);
+  }
+  .search-shop input{
+    border:none; background:transparent; outline:none; font-family:inherit;
+    font-size:14px; width:100%; color:var(--tinta);
+  }
+  .search-shop button{
+    border:none; background:var(--verde); color:#fff; width:30px; height:30px;
+    border-radius:50%; cursor:pointer; flex-shrink:0; font-size:13px;
+  }
+
+  /* Layout tienda */
+  .shop-section{ padding:40px 0 80px; }
+  .shop-layout{
+    display:grid; gap:32px;
+    grid-template-columns:1fr;
+  }
+  @media(min-width:960px){
+    .shop-layout{ grid-template-columns:220px 1fr; }
+  }
+
+  /* Sidebar categorías */
+  .sidebar{
+    background:#fff; border:1px solid var(--borde); border-radius:16px;
+    padding:24px 20px; height:fit-content;
+  }
+  .sidebar h3{
+    font-size:15px; margin-bottom:16px; color:var(--tinta);
+  }
+  .sidebar ul{ list-style:none; display:flex; flex-direction:column; gap:4px; }
+  .sidebar ul a{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:10px 12px; border-radius:10px; font-size:14px; color:var(--gris);
+    transition:background .2s, color .2s;
+  }
+  .sidebar ul a:hover, .sidebar ul a.active{
+    background:var(--verde-claro); color:var(--verde-oscuro); font-weight:600;
+  }
+  .sidebar ul a span{ font-size:12px; color:var(--gris); opacity:.7; }
+  .sidebar .divider{ height:1px; background:var(--borde); margin:18px 0; }
+
+  /* Grid productos */
+  .products-head{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:24px; flex-wrap:wrap; gap:12px;
+  }
+  .products-head h2{ font-size:22px; }
+  .products-head .count{ font-size:14px; color:var(--gris); }
+
+  .product-grid{
+    display:grid; gap:20px;
+    grid-template-columns:repeat(2, 1fr);
+  }
+  @media(min-width:640px){ .product-grid{ grid-template-columns:repeat(3, 1fr); } }
+  @media(min-width:1100px){ .product-grid{ grid-template-columns:repeat(3, 1fr); } }
+
+  .product-card{
+    background:#fff; border:1px solid var(--borde); border-radius:16px;
+    overflow:hidden; transition:transform .25s, box-shadow .25s;
+    display:flex; flex-direction:column;
+  }
+  .product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 24px 48px -16px rgba(22,38,31,.18);
+  }
+  .product-img{
+    position:relative; aspect-ratio:1/1; overflow:hidden; background:var(--verde-claro);
+  }
+  .product-img img{
+    width:100%; height:100%; object-fit:cover; transition:transform .35s;
+  }
+  .product-card:hover .product-img img{ transform:scale(1.07); }
+  .product-badge{
+    position:absolute; top:12px; left:12px;
+    background:var(--verde); color:#fff; font-size:11px; font-weight:600;
+    padding:4px 10px; border-radius:100px; text-transform:uppercase; letter-spacing:.03em;
+  }
+  .product-badge.blue{ background:var(--azul); }
+  .product-badge.orange{ background:#C45C26; }
+  .product-body{ padding:16px 18px 20px; flex:1; display:flex; flex-direction:column; }
+  .product-cat{ font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:var(--azul-oscuro); margin-bottom:6px; }
+  .product-body h3{ font-size:16px; margin-bottom:6px; line-height:1.3; }
+  .product-body p{ font-size:13px; color:var(--gris); margin-bottom:14px; flex:1; }
+  .product-footer{
+    display:flex; justify-content:space-between; align-items:center; gap:10px;
+  }
+  .product-price{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:17px; color:var(--verde-oscuro); }
+  .product-price small{ font-size:12px; font-weight:500; color:var(--gris); }
+
+  /* Sección servicio técnico */
+  .service-banner{
+    margin-top:64px;
+    background:linear-gradient(135deg, var(--verde-oscuro), var(--azul-oscuro));
+    border-radius:20px; padding:48px 40px; color:#fff;
+    display:grid; gap:32px; align-items:center;
+  }
+  @media(min-width:800px){ .service-banner{ grid-template-columns:1.2fr 1fr; } }
+  .service-banner h2{ font-size:clamp(24px,3vw,32px); margin-bottom:12px; }
+  .service-banner p{ color:#B8C7BE; font-size:15px; margin-bottom:24px; max-width:420px; }
+  .service-features{ display:grid; gap:12px; }
+  .service-features div{
+    display:flex; gap:12px; align-items:flex-start;
+    background:rgba(255,255,255,.08); border-radius:12px; padding:14px 16px;
+  }
+  .service-features .ico{ font-size:20px; }
+  .service-features b{ display:block; font-size:14px; }
+  .service-features span{ font-size:12px; color:#B8C7BE; }
+
+  /* Galería extra de imágenes */
+  .gallery-strip{
+    margin-top:56px;
+  }
+  .gallery-strip h2{ font-size:22px; margin-bottom:8px; }
+  .gallery-strip > p{ color:var(--gris); font-size:15px; margin-bottom:24px; }
+  .img-mosaic{
+    display:grid; gap:12px;
+    grid-template-columns:repeat(2,1fr);
+  }
+  @media(min-width:700px){
+    .img-mosaic{ grid-template-columns:repeat(4,1fr); grid-template-rows:auto auto; }
+    .img-mosaic .big{ grid-column:span 2; grid-row:span 2; }
+  }
+  .img-mosaic figure{
+    border-radius:14px; overflow:hidden; position:relative; aspect-ratio:1/1;
+  }
+  .img-mosaic .big{ aspect-ratio:auto; min-height:280px; }
+  .img-mosaic img{ width:100%; height:100%; object-fit:cover; transition:transform .3s; }
+  .img-mosaic figure:hover img{ transform:scale(1.05); }
+  .img-mosaic figcaption{
+    position:absolute; left:0; right:0; bottom:0;
+    background:linear-gradient(0deg, rgba(17,26,22,.7), transparent);
+    color:#fff; font-size:13px; font-weight:600; padding:16px 14px 12px;
+  }
+
+  /* CTA contacto */
+  .cta-bar{
+    margin-top:56px;
+    background:var(--verde-claro); border:1px solid var(--borde);
+    border-radius:18px; padding:36px 32px;
+    display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:space-between;
+  }
+  .cta-bar h3{ font-size:20px; margin-bottom:4px; }
+  .cta-bar p{ font-size:14px; color:var(--gris); }
+
+  /* Footer */
+  .footer-grande{ background:var(--tinta); color:#B8C7BE; padding:64px 0 0; margin-top:0; }
+  .footer-cols{ display:grid; gap:36px; grid-template-columns:1fr; padding-bottom:40px; }
+  @media(min-width:720px){ .footer-cols{ grid-template-columns:1.3fr 1fr 1fr 1fr; } }
+  .footer-cols h4{ color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:16px; }
+  .footer-cols p{ font-size:13.5px; line-height:1.7; }
+  .footer-cols ul{ list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .footer-cols ul a{ font-size:13.5px; color:#B8C7BE; transition:color .2s; }
+  .footer-cols ul a:hover{ color:#fff; }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1); padding:20px 0;
+    display:flex; flex-direction:column; gap:8px; align-items:center; text-align:center; font-size:12.5px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+  }
+
+  /* Chat flotante */
+  .chat-fab{ position:fixed; bottom:22px; right:22px; z-index:80; width:58px; height:58px; border-radius:50%; border:none; cursor:pointer; background:linear-gradient(135deg, var(--verde), var(--azul)); color:#fff; font-size:24px; box-shadow:0 12px 28px rgba(17,38,31,.3); display:flex; align-items:center; justify-content:center; }
+  .chat-panel{ position:fixed; bottom:90px; right:22px; z-index:80; width:min(320px, calc(100vw - 40px)); background:#fff; border-radius:16px; border:1px solid var(--borde); box-shadow:0 24px 48px -12px rgba(22,38,31,.3); display:none; flex-direction:column; overflow:hidden; }
+  .chat-panel.open{ display:flex; }
+  .chat-head{ background:var(--verde); color:#fff; padding:16px 18px; font-weight:600; font-size:14px; }
+  .chat-body{ padding:16px 18px; font-size:13.5px; color:var(--gris); display:flex; flex-direction:column; gap:10px; max-height:220px; overflow-y:auto; }
+  .chat-bubble{ background:var(--verde-claro); border-radius:12px; padding:10px 14px; color:var(--tinta); align-self:flex-start; max-width:85%; }
+  .chat-foot{ padding:12px; border-top:1px solid var(--borde); display:flex; gap:8px; }
+  .chat-foot input{ flex:1; border:1px solid var(--borde); border-radius:100px; padding:10px 14px; font-family:inherit; font-size:13px; outline:none; }
+  .chat-foot button{ border:none; background:var(--verde); color:#fff; width:36px; height:36px; border-radius:50%; cursor:pointer; }
+  .btn-whatsapp{ background:#25D366; color:#fff; }
+  .btn-whatsapp:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(37,211,102,.3); }
+
+  /* Lista de pedido (carrito) */
+  .cart-fab{ position:fixed; bottom:22px; right:92px; z-index:80; width:58px; height:58px; border-radius:50%; cursor:pointer; background:#fff; color:var(--tinta); font-size:22px; box-shadow:0 12px 28px rgba(17,38,31,.25); display:flex; align-items:center; justify-content:center; border:1px solid var(--borde); }
+  .cart-count{ position:absolute; top:-4px; right:-4px; background:var(--verde); color:#fff; font-size:11px; font-weight:700; min-width:20px; height:20px; border-radius:10px; display:none; align-items:center; justify-content:center; padding:0 5px; }
+  .cart-panel{ position:fixed; bottom:90px; right:22px; z-index:80; width:min(340px, calc(100vw - 40px)); background:#fff; border-radius:16px; border:1px solid var(--borde); box-shadow:0 24px 48px -12px rgba(22,38,31,.3); display:none; flex-direction:column; overflow:hidden; max-height:70vh; }
+  .cart-panel.open{ display:flex; }
+  .cart-head{ background:var(--tinta); color:#fff; padding:14px 16px; font-weight:600; font-size:14px; display:flex; justify-content:space-between; align-items:center; }
+  .cart-head button{ background:none; border:none; color:#fff; font-size:18px; cursor:pointer; }
+  .cart-body{ padding:14px 16px; overflow-y:auto; flex:1; }
+  .cart-empty{ font-size:13px; color:var(--gris); }
+  .cart-item{ display:flex; justify-content:space-between; align-items:center; gap:8px; padding:8px 0; border-bottom:1px solid var(--borde); font-size:13px; }
+  .cart-item button{ border:none; background:none; color:var(--gris); cursor:pointer; font-size:13px; flex-shrink:0; }
+  .cart-item button:hover{ color:#c0392b; }
+  .cart-foot{ padding:12px 16px; border-top:1px solid var(--borde); display:flex; flex-direction:column; gap:8px; }
+  .cart-foot .row{ display:flex; gap:8px; }
+  .cart-foot .row .btn{ flex:1; font-size:12.5px; padding:9px; text-align:center; }
+  .cart-foot .clear-btn{ background:none; border:1px solid var(--borde); color:var(--gris); border-radius:8px; cursor:pointer; padding:8px; font-size:12px; }
+
+  /* Estado sin resultados de búsqueda */
+  .no-results{ display:none; background:var(--azul-claro); border:1px solid var(--borde); border-radius:16px; padding:24px; margin-bottom:28px; }
+  .no-results h3{ font-size:16.5px; margin-bottom:6px; }
+  .no-results p{ font-size:13.5px; color:var(--gris); margin-bottom:14px; }
+  .no-results-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+  .no-results-actions input{ flex:1; min-width:180px; border:1px solid var(--borde); border-radius:8px; padding:10px 12px; font-family:inherit; font-size:13.5px; }
+  .no-results-actions .btn{ font-size:13px; padding:10px 16px; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.aldoagro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://www.aldoagro.com/servicios.html" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo"><img src="imagenes/logo.png" alt="ALDOAGRO" style="height:36px;"></a>
+    <ul class="nav-links">
+      <li><a href="index.html#servicios">Servicios</a></li>
+      <li><a href="servicios.html" class="active">Tienda de servicios</a></li>
+      <li><a href="index.html#marcas">Marcas</a></li>
+      <li><a href="index.html#sobre">Sobre nosotros</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <a href="index.html#contacto" class="btn btn-primary nav-cta">Contáctanos</a>
+    <div class="mobile-controls">
+      <button class="icon-btn" aria-label="Abrir menú" onclick="document.getElementById('mobilePanel').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <ul>
+      <li><a href="index.html#servicios">Servicios</a></li>
+      <li><a href="servicios.html">Tienda de servicios</a></li>
+      <li><a href="index.html#marcas">Marcas</a></li>
+      <li><a href="index.html#sobre">Sobre nosotros</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="breadcrumb"><div class="wrap"><a href="index.html">Inicio</a><span>/</span><span>Servicios</span></div></div>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">● Catálogo y servicios</span>
+    <h1>Tienda de maquinaria, repuestos y servicio técnico</h1>
+    <p>Explora nuestro surtido de equipos agrícolas, piezas y planes de mantenimiento. Diseño pensado para encontrar rápido lo que necesitas.</p>
+  </div>
+</section>
+
+<div class="shop-toolbar">
+  <div class="toolbar-inner">
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Todo</button>
+      <button class="filter-btn" data-filter="maquinaria">Maquinaria</button>
+      <button class="filter-btn" data-filter="implementos">Implementos</button>
+      <button class="filter-btn" data-filter="repuestos">Repuestos</button>
+      <button class="filter-btn" data-filter="servicio">Servicio técnico</button>
+    </div>
+    <form class="search-shop" onsubmit="event.preventDefault();">
+      <input type="text" id="searchInput" placeholder="Buscar en el catálogo...">
+      <button type="submit" aria-label="Buscar">🔍</button>
+    </form>
+  </div>
+</div>
+
+<section class="shop-section">
+  <div class="wrap">
+    <div class="shop-layout">
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h3>Categorías</h3>
+        <ul>
+          <li><a href="#maquinaria" class="active">Tractores y cosechadoras <span>12</span></a></li>
+          <li><a href="#implementos">Implementos <span>24</span></a></li>
+          <li><a href="#repuestos">Repuestos <span>180+</span></a></li>
+          <li><a href="#servicio">Planes de servicio <span>6</span></a></li>
+        </ul>
+        <div class="divider"></div>
+        <h3>Marcas</h3>
+        <ul>
+          <li><a href="#">John Deere</a></li>
+          <li><a href="#">New Holland</a></li>
+          <li><a href="#">Case IH</a></li>
+          <li><a href="#">Claas</a></li>
+          <li><a href="#">Kubota</a></li>
+          <li><a href="#">Fendt</a></li>
+        </ul>
+        <div class="divider"></div>
+        <h3>¿Necesitas ayuda?</h3>
+        <p style="font-size:13px; color:var(--gris); margin-bottom:14px;">Nuestro equipo te orienta sobre el equipo o el repuesto adecuado.</p>
+        <a href="index.html#contacto" class="btn btn-primary btn-sm" style="width:100%; text-align:center;">Hablar con un asesor</a>
+      </aside>
+
+      <!-- Productos -->
+      <div>
+        <div class="products-head">
+          <h2 id="maquinaria">Maquinaria e implementos</h2>
+          <span class="count">Mostrando 12 equipos</span>
+        </div>
+
+        <div class="no-results" id="noResults">
+          <h3>No encontramos ese producto</h3>
+          <p>Lo tenemos disponible solo por pedido especial. Dejanos tu correo y te confirmamos precio y plazo, o agregalo a tu lista para consultarlo junto con otros productos.</p>
+          <div class="no-results-actions">
+            <input type="email" id="noResultsEmail" placeholder="Tu email">
+            <button type="button" id="noResultsSend" class="btn btn-primary">Enviar solicitud</button>
+            <button type="button" id="noResultsCart" class="btn btn-outline">🛒 Añadir a mi lista</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+          <!-- 1 -->
+          <article class="product-card" data-cat="maquinaria">
+            <div class="product-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=600&q=80" alt="Tractor agrícola">
+              <span class="product-badge">Disponible</span>
+            </div>
+            <div class="product-body">
+              <span class="product-cat">Tractores</span>
+              <h3>Tractor 110–130 CV</h3>
+              <p>Ideal para explotaciones medianas. Transmisión eficiente y cabina confortable.</p>
+              <div class="product-footer">
+                <span class="product-price">Consultar</span>
+                <button type="button" class="btn btn-outline btn-sm" data-add-cart="Tractor 110–130 CV">🛒</button>
+                <a href="index.html#contacto" class="btn btn-outline btn-sm">Info</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="product-card" data-cat="maquinaria">
+            <div class="product-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80" alt="Cosechadora">
+              <span class="product-badge blue">Nuevo</span>
+            </div>
+            <div class="product-body">
+              <span class="product-cat">Cosechadoras</span>
+              <h3>Cosechadora de cereales</h3>
+              <p>Alta capacidad de trilla y bajo consumo. Perfecta para grandes superficies.</p>
+              <div class="product-footer">
+                <span class="product-price">Consultar</span>
+                <button type="button" class="btn btn-outline btn-sm" data-add-cart="Cosechadora de cereales">🛒</button>
+                <a href="index.html#contacto" class="btn btn-outline btn-sm">Info</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="product-card" data-cat="implementos">
+            <div class="product-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1500937386664-56d1dfef3030?w=600&q=80" alt="Arado">
+              <span class="product-badge">Stock</span>
+            </div>
+            <div class="product-body">
+              <span class="product-cat">Implementos</span>
+              <h3>Arado de vertedera</h3>
+              <p>Preparación de suelo profunda. Compatible con la mayoría de tractores de la gama media.</p>
+              <div class="product-footer">
+                <span class="product-price">desde 2.800 €</span>
+                <button type="button" class="btn btn-outline btn-sm" data-add-cart="Arado de vertedera">🛒</button>
+                <a href="index.html#contacto" class="btn btn-outline btn-sm">Info</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="product-card" data-cat="implementos">
+            <div class="product-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80" alt="Sembradora">
+              <span class="product-badge">Disponible</span>
+            </div>
+            <div class="product-body">
+              <span class="product-cat">Implementos</span>
+              <h3>Sembradora de precisión</h3>
+              <p>Siembra uniforme con control de dosis. Ideal para maíz, girasol y cereales.</p>
+              <div class="product-footer">
+                <span class="product-price">desde 4.500 €</span>
+                <button type="button" class="btn btn-outline btn-sm" data-add-cart="Sembradora de precisión">🛒</button>
+                <a href="index.html#contacto" class="btn btn-outline btn-sm">Info</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="product-card" data-cat="maquinaria">
+            <div class="product-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&q=80" alt="Tractor compacto">
+              <span class="product-badge orange">Oferta</span>
+            </div>
+            <div class="product-body">
+              <span class="product-cat">Tractores</span>
+              <h3>Tractor compacto 45–60 CV</h3>
+              <p>Maniobrable para viñedo, olivar y huertas. Bajo coste de mantenimiento.</p>
+              <div class="product-footer">
+                <span class="product-price">Consultar</span>
+                <button type="button" class="btn btn-outline btn-sm" data-add-cart="Tractor compacto 45–60 CV">🛒</button>
+                <a href="index.html#contacto" class="btn btn-outline btn-sm">Info</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="product-card" data-cat="implementos">
+            <div class="product-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&q=80" alt="Pulverizador">
+              <span class="product-badge">Stock</span>
+            </div>
+            <div class="product-body">
+              <span class="product-cat">Implementos</span>
+              <h3>Pulverizador arrastrado</h3>
+              <p>Barras de hasta 18 m. Sistema de regulación de presión y filtros de alta calidad.</p>
+              <div class="product-footer">
+                <span class="product-price">desde 3.200 €</span>
+                <button type="button" class="btn btn-outline btn-sm" data-add-cart="Pulverizador arrastrado">🛒</button>
+                <a href="index.html#contacto" class="btn btn-outline btn-sm">Info</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="product-card" data-cat="repuestos">
+            <div class="product-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="Repuestos motor">
+              <span class="product-badge blue">Original</span>
+            </div>
+            <div class="product-body">
+              <span class="product-cat">Repuestos</span>
+              <h3>Kit de filtros motor</h3>
+              <p>Filtros de aceite, aire y combustible para las principales marcas. Stock permanente.</p>
+              <div class="product-footer">
+                <span class="product-price">desde 48 €</span>
+                <button type="button" class="btn btn-outline btn-sm" data-add-cart="Kit de filtros motor">🛒</button>
+                <a href="index.html#contacto" class="btn btn-outline btn-sm">Pedir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="product-card" data-cat="repuestos">
+            <div class="product-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Neumáticos">
+              <span class="product-badge">Stock</span>
+            </div>
+            <div class="product-body">
+              <span class="product-cat">Repuestos</span>
+              <h3>Neumáticos agrícolas</h3>
+              <p>Ruedas radiales y diagonales para tractor, remolque y cosechadora. Varias medidas.</p>
+              <div class="product-footer">
+                <span class="product-price">Consultar</span>
+                <button type="button" class="btn btn-outline btn-sm" data-add-cart="Neumáticos agrícolas">🛒</button>
+                <a href="index.html#contacto" class="btn btn-outline btn-sm">Pedir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9 -->
+          <article class="product-card" data-cat="implementos">
+            <div class="product-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Remolque">
+              <span class="product-badge">Disponible</span>
+            </div>
+            <div class="product-body">
+              <span class="product-cat">Implementos</span>
+              <h3>Remolque agrícola 8–12 t</h3>
+              <p>Volquete hidráulico, ejes reforzados y frenos. Homologado para circulación.</p>
+              <div class="product-footer">
+                <span class="product-price">desde 6.900 €</span>
+                <button type="button" class="btn btn-outline btn-sm" data-add-cart="Remolque agrícola 8–12 t">🛒</button>
+                <a href="index.html#contacto" class="btn btn-outline btn-sm">Info</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="product-card" data-cat="servicio">
+            <div class="product-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80" alt="Taller técnico">
+              <span class="product-badge orange">Servicio</span>
+            </div>
+            <div class="product-body">
+              <span class="product-cat">Servicio técnico</span>
+              <h3>Revisión pre-campaña</h3>
+              <p>Diagnóstico completo, cambio de filtros y ajuste de sistemas antes de la temporada.</p>
+              <div class="product-footer">
+                <span class="product-price">desde 180 €</span>
+                <button type="button" class="btn btn-outline btn-sm" data-add-cart="Revisión pre-campaña">🛒</button>
+                <a href="index.html#contacto" class="btn btn-outline btn-sm">Reservar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 11 -->
+          <article class="product-card" data-cat="servicio">
+            <div class="product-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="Mantenimiento">
+              <span class="product-badge">Plan anual</span>
+            </div>
+            <div class="product-body">
+              <span class="product-cat">Servicio técnico</span>
+              <h3>Plan de mantenimiento anual</h3>
+              <p>Visitas programadas, piezas con descuento y prioridad en taller durante campaña.</p>
+              <div class="product-footer">
+                <span class="product-price">Consultar</span>
+                <button type="button" class="btn btn-outline btn-sm" data-add-cart="Plan de mantenimiento anual">🛒</button>
+                <a href="index.html#contacto" class="btn btn-outline btn-sm">Reservar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 12 -->
+          <article class="product-card" data-cat="repuestos">
+            <div class="product-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80" alt="Hidráulica">
+              <span class="product-badge blue">Original</span>
+            </div>
+            <div class="product-body">
+              <span class="product-cat">Repuestos</span>
+              <h3>Componentes hidráulicos</h3>
+              <p>Bombas, cilindros, válvulas y mangueras. Compatible con las principales marcas.</p>
+              <div class="product-footer">
+                <span class="product-price">desde 35 €</span>
+                <button type="button" class="btn btn-outline btn-sm" data-add-cart="Componentes hidráulicos">🛒</button>
+                <a href="index.html#contacto" class="btn btn-outline btn-sm">Pedir</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Banner servicio técnico -->
+        <div class="service-banner" id="servicio">
+          <div>
+            <h2>Servicio técnico especializado</h2>
+            <p>Taller propio con técnicos formados en las principales marcas. Diagnóstico, reparación y planes preventivos para que tu maquinaria rinda al máximo.</p>
+            <a href="index.html#contacto" class="btn btn-primary">Solicitar cita en taller</a>
+          </div>
+          <div class="service-features">
+            <div>
+              <span class="ico">🔧</span>
+              <div>
+                <b>Diagnóstico electrónico</b>
+                <span>Lectura de códigos y calibración de sistemas</span>
+              </div>
+            </div>
+            <div>
+              <span class="ico">⏱️</span>
+              <div>
+                <b>Respuesta en 48 h</b>
+                <span>Prioridad en temporada alta de cosecha</span>
+              </div>
+            </div>
+            <div>
+              <span class="ico">📦</span>
+              <div>
+                <b>Piezas en stock</b>
+                <span>Amplio almacén de repuestos originales</span>
+              </div>
+            </div>
+            <div>
+              <span class="ico">📋</span>
+              <div>
+                <b>Planes anuales</b>
+                <span>Mantenimiento programado con descuentos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Galería de imágenes extra -->
+        <div class="gallery-strip" id="repuestos">
+          <h2>Nuestro taller e instalaciones</h2>
+          <p>Imágenes reales de referencia — sustituye por fotos de tu taller, almacén y equipos en campo.</p>
+          <div class="img-mosaic">
+            <figure class="big">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80" alt="Taller">
+              <figcaption>Zona de taller y diagnóstico</figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=500&q=80" alt="Tractor en campo">
+              <figcaption>Entrega en explotación</figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=500&q=80" alt="Cosecha">
+              <figcaption>Equipos en campaña</figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" src="https://images.unsplash.com/photo-1500937386664-56d1dfef3030?w=500&q=80" alt="Campo">
+              <figcaption>Preparación de suelo</figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=500&q=80" alt="Siembra">
+              <figcaption>Siembra de precisión</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- CTA final -->
+        <div class="cta-bar">
+          <div>
+            <h3>¿No encuentras lo que buscas?</h3>
+            <p>Pedimos cualquier referencia de repuesto o te asesoramos sobre el equipo más adecuado.</p>
+          </div>
+          <a href="index.html#contacto" class="btn btn-primary">Contactar con Aldo Agro</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-grande">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Aldo Agro</h4>
+        <p>Maquinaria, repuestos y servicio técnico para el campo. Tu aliado de confianza en cada campaña.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Tienda de servicios</a></li>
+          <li><a href="index.html#marcas">Marcas</a></li>
+          <li><a href="index.html#sobre">Sobre nosotros</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categorías</h4>
+        <ul>
+          <li><a href="#maquinaria">Maquinaria</a></li>
+          <li><a href="#implementos">Implementos</a></li>
+          <li><a href="#repuestos">Repuestos</a></li>
+          <li><a href="#servicio">Servicio técnico</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/34722193780">WhatsApp</a></li>
+          <li><a href="mailto:contacto@aldoagro.com">contacto@aldoagro.com</a></li>
+          <li><a href="https://www.facebook.com/share/14jkg7uzwdd/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/_aldoagro/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="index.html#contacto">Formulario web</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Aldo Agro. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="chat-fab" id="chatFab" aria-label="Abrir chat">💬</button>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">Aldo Agro — Chat</div>
+  <div class="chat-body">
+    <div class="chat-bubble">¡Hola! Escribe tu mensaje y lo enviamos directo a nuestro WhatsApp.</div>
+  </div>
+  <div class="chat-foot">
+    <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
+    <button id="chatSend" aria-label="Enviar">➤</button>
+  </div>
+</div>
+
+<button class="cart-fab" id="cartFab" aria-label="Ver mi lista de pedido">🛒<span class="cart-count">0</span></button>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-head">Mi lista de pedido <button id="cartClose" aria-label="Cerrar">✕</button></div>
+  <div class="cart-body"><div id="cartList"></div></div>
+  <div class="cart-foot">
+    <p style="font-size:11px; color:var(--gris); margin:0;">Esta lista es solo para pedir cotización — no es una compra ni un pago.</p>
+    <div class="row">
+      <button id="cartSendEmail" class="btn btn-primary">✉️ Correo</button>
+      <button id="cartSendWhatsapp" class="btn btn-whatsapp">💬 WhatsApp</button>
+    </div>
+    <button id="cartClear" class="clear-btn">Vaciar lista</button>
+  </div>
+</div>
+
+<script src="cart.js"></script>
+<script>
+  // Mobile panel
+  document.querySelectorAll('.mobile-panel a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobilePanel').classList.remove('open'));
+  });
+
+  // Chat flotante
+  const chatFab = document.getElementById('chatFab');
+  const chatPanel = document.getElementById('chatPanel');
+  chatFab.addEventListener('click', () => chatPanel.classList.toggle('open'));
+  const chatInput = document.getElementById('chatInput');
+  const chatSend = document.getElementById('chatSend');
+  chatSend.addEventListener('click', () => {
+    const msg = chatInput.value.trim();
+    if (!msg) return;
+    window.open(`https://wa.me/34722193780?text=${encodeURIComponent(msg)}`, '_blank');
+    chatInput.value = '';
+  });
+  chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') chatSend.click(); });
+
+  // Filtros
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.product-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.cat === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Búsqueda simple
+  const searchInput = document.getElementById('searchInput');
+  const noResults = document.getElementById('noResults');
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const match = text.includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) visibleCount++;
+    });
+    if (noResults) {
+      noResults.style.display = (q && visibleCount === 0) ? 'block' : 'none';
+    }
+  });
+
+  const noResultsEmail = document.getElementById('noResultsEmail');
+  const noResultsSend = document.getElementById('noResultsSend');
+  const noResultsCart = document.getElementById('noResultsCart');
+  if (noResultsSend) {
+    noResultsSend.addEventListener('click', () => {
+      const query = searchInput.value.trim();
+      const email = noResultsEmail.value.trim();
+      if (!email) { alert('Ingresá tu email para que te confirmemos la disponibilidad.'); return; }
+      const subject = encodeURIComponent('Pedido especial — ' + query);
+      const body = encodeURIComponent(`Hola, busco lo siguiente y no lo encontré en el catálogo:\n\n${query}\n\nMi email: ${email}`);
+      window.location.href = `mailto:contacto@aldoagro.com?subject=${subject}&body=${body}`;
+    });
+  }
+  if (noResultsCart) {
+    noResultsCart.addEventListener('click', () => {
+      const query = searchInput.value.trim();
+      if (window.AldoCart) window.AldoCart.addToCart('Pedido especial: ' + query);
+    });
+  }
+</script>
+</body>
+</html>

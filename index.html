@@ -5,6 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aldo Agro — Maquinaria, repuestos y servicio para el campo</title>
 <meta name="description" content="Aldo Agro: venta de maquinaria e implementos agrícolas, distribución de repuestos y servicios de mantenimiento y asesoría técnica.">
+<link rel="canonical" href="https://www.aldoagro.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aldo Agro">
+<meta property="og:locale" content="es_HN">
+<meta property="og:title" content="Aldo Agro — Maquinaria, repuestos y servicio para el campo">
+<meta property="og:description" content="Aldo Agro: venta de maquinaria e implementos agrícolas, distribución de repuestos y servicios de mantenimiento y asesoría técnica.">
+<meta property="og:url" content="https://www.aldoagro.com/">
+<meta property="og:image" content="https://www.aldoagro.com/imagenes/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aldo Agro — Maquinaria, repuestos y servicio para el campo">
+<meta name="twitter:description" content="Aldo Agro: venta de maquinaria e implementos agrícolas, distribución de repuestos y servicios de mantenimiento y asesoría técnica.">
+<meta name="twitter:image" content="https://www.aldoagro.com/imagenes/logo.png">
+<link rel="icon" type="image/png" href="imagenes/logoquienessomon.png">
+<link rel="apple-touch-icon" href="imagenes/logoquienessomon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -116,6 +130,14 @@
   .news-card h3{ font-size:17px; margin:8px 0 8px; }
   .news-card p{ font-size:14px; color:var(--gris); }
   .opiniones{ background:var(--papel); }
+  .faq{ background:var(--verde-claro); }
+  .faq-list{ max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:12px; }
+  .faq-list details{ background:#fff; border:1px solid var(--borde); border-radius:12px; padding:16px 20px; }
+  .faq-list summary{ cursor:pointer; font-weight:600; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  .faq-list summary::-webkit-details-marker{ display:none; }
+  .faq-list summary::after{ content:'+'; font-size:20px; color:var(--verde-oscuro); flex-shrink:0; }
+  .faq-list details[open] summary::after{ content:'−'; }
+  .faq-list p{ margin-top:10px; color:var(--gris); font-size:14px; }
   .testi-slider{ position:relative; max-width:680px; margin:0 auto; text-align:center; overflow:hidden; }
   .testi-track{ display:flex; transition:transform .5s ease; }
   .testi-slide{ min-width:100%; padding:8px 12px; }
@@ -146,6 +168,25 @@
   .chat-foot{ padding:12px; border-top:1px solid var(--borde); display:flex; gap:8px; }
   .chat-foot input{ flex:1; border:1px solid var(--borde); border-radius:100px; padding:10px 14px; font-family:inherit; font-size:13px; outline:none; }
   .chat-foot button{ border:none; background:var(--verde); color:#fff; width:36px; height:36px; border-radius:50%; cursor:pointer; }
+  .btn-whatsapp{ background:#25D366; color:#fff; }
+  .btn-whatsapp:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(37,211,102,.3); }
+
+  /* Lista de pedido (carrito) */
+  .cart-fab{ position:fixed; bottom:22px; right:92px; z-index:80; width:58px; height:58px; border-radius:50%; cursor:pointer; background:#fff; color:var(--tinta); font-size:22px; box-shadow:0 12px 28px rgba(17,38,31,.25); display:flex; align-items:center; justify-content:center; border:1px solid var(--borde); }
+  .cart-count{ position:absolute; top:-4px; right:-4px; background:var(--verde); color:#fff; font-size:11px; font-weight:700; min-width:20px; height:20px; border-radius:10px; display:none; align-items:center; justify-content:center; padding:0 5px; }
+  .cart-panel{ position:fixed; bottom:90px; right:22px; z-index:80; width:min(340px, calc(100vw - 40px)); background:#fff; border-radius:16px; border:1px solid var(--borde); box-shadow:0 24px 48px -12px rgba(22,38,31,.3); display:none; flex-direction:column; overflow:hidden; max-height:70vh; }
+  .cart-panel.open{ display:flex; }
+  .cart-head{ background:var(--tinta); color:#fff; padding:14px 16px; font-weight:600; font-size:14px; display:flex; justify-content:space-between; align-items:center; }
+  .cart-head button{ background:none; border:none; color:#fff; font-size:18px; cursor:pointer; }
+  .cart-body{ padding:14px 16px; overflow-y:auto; flex:1; }
+  .cart-empty{ font-size:13px; color:var(--gris); }
+  .cart-item{ display:flex; justify-content:space-between; align-items:center; gap:8px; padding:8px 0; border-bottom:1px solid var(--borde); font-size:13px; }
+  .cart-item button{ border:none; background:none; color:var(--gris); cursor:pointer; font-size:13px; flex-shrink:0; }
+  .cart-item button:hover{ color:#c0392b; }
+  .cart-foot{ padding:12px 16px; border-top:1px solid var(--borde); display:flex; flex-direction:column; gap:8px; }
+  .cart-foot .row{ display:flex; gap:8px; }
+  .cart-foot .row .btn{ flex:1; font-size:12.5px; padding:9px; text-align:center; }
+  .cart-foot .clear-btn{ background:none; border:1px solid var(--borde); color:var(--gris); border-radius:8px; cursor:pointer; padding:8px; font-size:12px; }
   [data-reveal]{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
   [data-reveal].visible{ opacity:1; transform:translateY(0); }
   @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
@@ -169,12 +210,82 @@
   .search-full input{ flex:1; border:1px solid var(--borde); border-radius:8px 0 0 8px; padding:12px 16px; font-family:inherit; font-size:14px; outline:none; }
   .search-full button{ border:none; background:var(--verde); color:#fff; padding:0 22px; border-radius:0 8px 8px 0; cursor:pointer; font-size:16px; }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Aldo Agro",
+  "description": "Empresa familiar de venta de maquinaria e implementos agrícolas, distribución de repuestos y servicio técnico.",
+  "url": "https://www.aldoagro.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.aldoagro.com/imagenes/logoquienessomon.png",
+    "width": 1024,
+    "height": 1024
+  },
+  "image": "https://www.aldoagro.com/imagenes/logoquienessomon.png",
+  "telephone": "+34722193780",
+  "email": "contacto@aldoagro.com",
+  "foundingDate": "2024",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tocoa",
+    "addressRegion": "Colón",
+    "addressCountry": "HN"
+  },
+  "sameAs": [
+    "https://www.facebook.com/share/14jkg7uzwdd/",
+    "https://www.instagram.com/_aldoagro/"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Aldo Agro",
+  "url": "https://www.aldoagro.com/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Hacen envíos de repuestos?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, trabajamos con stock permanente y coordinamos el envío según el destino. Escribinos con la referencia de la pieza y te confirmamos plazo y disponibilidad." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajan con pedidos B2B o al por mayor?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, atendemos talleres, distribuidores y explotaciones agrícolas con pedidos por volumen y condiciones adaptadas a cada negocio." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde están ubicados?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nuestra base de operaciones está en Tocoa, Colón, Honduras, con almacenes en Estados Unidos y España para asegurar disponibilidad." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo consulto disponibilidad de un repuesto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Podés escribirnos por WhatsApp o al correo de repuestos indicando marca, modelo o referencia de la pieza." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Solo venden repuestos o también dan servicio técnico?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ofrecemos venta de maquinaria y repuestos, y también servicio de taller, preparación de terreno, servicios industriales y asesoría técnica." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <header>
   <div class="topbar">
-    <a href="/" class="topbar-logo"><img src="imagenes/logo.png" alt="ALDOAGRO"></a>
+    <a href="index.html" class="topbar-logo"><img src="imagenes/logo.png" alt="ALDOAGRO"></a>
     <div class="topbar-actions">
       <a href="https://wa.me/34722193780" target="_blank" class="whatsapp-link">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.7-2.2-1.2-3.1-2.7-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.1 1.7 2.6 4.1 3.6.6.2 1 .4 1.4.5.6.2 1.1.1 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2z"/></svg>
@@ -186,36 +297,37 @@
   </div>
   <nav class="navbar">
     <ul>
-      <li><a href="#repuestos">Repuestos</a>
+      <li><a href="repuestos.html">Repuestos</a>
         <div class="dropdown">
-          <a href="#repuestos">Motor</a>
-          <a href="#repuestos">Transmisión</a>
-          <a href="#repuestos">Hidráulica</a>
+          <a href="repuestos.html#agricola">Máquina agrícola</a>
+          <a href="repuestos.html#industrial">Máquina industrial</a>
+          <a href="repuestos.html#camioneria">Camionería</a>
         </div>
       </li>
-      <li><a href="#servicios">Servicios</a>
+      <li><a href="servicios.html">Servicios</a>
         <div class="dropdown">
-          <a href="#servicios">Mantenimiento</a>
-          <a href="#servicios">Asesoría técnica</a>
+          <a href="servicios.html#servicio">Servicio técnico</a>
+          <a href="servicios.html#maquinaria">Maquinaria e implementos</a>
         </div>
       </li>
-      <li><a href="#productos">Maquinarias</a>
+      <li><a href="maquinarias.html">Maquinarias</a>
         <div class="dropdown">
-          <a href="#productos">Tractores</a>
-          <a href="#productos">Cosechadoras</a>
+          <a href="maquinarias.html#jardinera">Jardinera y solar</a>
+          <a href="maquinarias.html#pesca">Pesca</a>
+          <a href="maquinarias.html#personal">Equipamiento personal</a>
         </div>
       </li>
-      <li><a href="#sobre">Sobre Nosotros</a>
+      <li><a href="sobre-nosotros.html">Sobre Nosotros</a>
         <div class="dropdown">
-          <a href="#sobre">Quiénes somos</a>
-          <a href="#contacto">Contacto</a>
+          <a href="sobre-nosotros.html#historia">Quiénes somos</a>
+          <a href="sobre-nosotros.html#contacto">Contacto</a>
         </div>
       </li>
     </ul>
   </nav>
   <div class="search-full">
-    <form onsubmit="event.preventDefault(); alert('Buscador de ejemplo — conéctalo a tu catálogo cuando lo tengas listo.');">
-      <input type="text" placeholder="Buscar producto o repuesto...">
+    <form onsubmit="event.preventDefault(); const q=this.q.value.trim(); window.location.href = 'repuestos.html' + (q ? ('?q=' + encodeURIComponent(q)) : '');">
+      <input type="text" name="q" placeholder="Buscar producto o repuesto...">
       <button type="submit" aria-label="Buscar">🔍</button>
     </form>
   </div>
@@ -229,7 +341,7 @@
       <p>En Aldo Agro vendemos maquinaria e implementos, distribuimos repuestos y damos mantenimiento y asesoría técnica para que tu explotación agrícola no pare.</p>
       <div class="hero-actions">
         <a href="#contacto" class="btn btn-primary">Solicitar información</a>
-        <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+        <a href="servicios.html" class="btn btn-outline">Ver servicios</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -252,21 +364,21 @@
       <p>Tres áreas de trabajo pensadas para acompañarte antes, durante y después de la compra.</p>
     </div>
     <div class="cards">
-      <div class="card">
+      <a class="card" href="maquinarias.html" style="display:block;">
         <div class="card-icon">🚜</div>
         <h3>Venta de maquinaria e implementos</h3>
         <p>Equipos agrícolas seleccionados por calidad y rendimiento, adaptados a las necesidades reales de cada explotación.</p>
-      </div>
-      <div class="card">
+      </a>
+      <a class="card" href="repuestos.html" style="display:block;">
         <div class="card-icon">⚙️</div>
         <h3>Distribución de repuestos</h3>
         <p>Piezas y repuestos disponibles para que tu maquinaria vuelva a funcionar sin demoras innecesarias.</p>
-      </div>
-      <div class="card">
+      </a>
+      <a class="card" href="servicios.html" style="display:block;">
         <div class="card-icon">🛠️</div>
         <h3>Mantenimiento y asesoría técnica</h3>
         <p>Acompañamiento y soporte técnico para alargar la vida útil de tus equipos y optimizar su rendimiento.</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -303,7 +415,7 @@
 <section class="sobre" id="sobre" data-reveal>
   <div class="wrap">
     <div class="sobre-img">
-      <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&q=80" alt="Campo agrícola">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&q=80" alt="Campo agrícola">
     </div>
     <div>
       <span class="eyebrow" style="background:var(--verde-claro); color:var(--verde-oscuro);">Sobre nosotros</span>
@@ -314,6 +426,7 @@
         <div class="stat"><b data-count="100" data-suffix="%">0</b><span>trato directo</span></div>
         <div class="stat"><b data-count="24" data-suffix="h">0</b><span>respuesta rápida</span></div>
       </div>
+      <a href="sobre-nosotros.html" class="btn btn-outline" style="margin-top:28px;">Conocer nuestra historia</a>
     </div>
   </div>
 </section>
@@ -326,18 +439,18 @@
       <p>Sustituye estas imágenes por fotos reales de tu maquinaria, implementos y repuestos.</p>
     </div>
     <div class="gallery">
-      <figure><img src="https://images.unsplash.com/photo-1591638246343-a5c9c9f4e5f0?w=500&q=80" alt="Tractor"><figcaption>Tractores</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=500&q=80" alt="Implemento agrícola"><figcaption>Implementos</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?w=500&q=80" alt="Repuestos"><figcaption>Repuestos</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=500&q=80" alt="Mantenimiento"><figcaption>Mantenimiento</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1530267981375-f08d743517fb?w=500&q=80" alt="Cosechadora"><figcaption>Cosechadoras</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=500&q=80" alt="Arado"><figcaption>Arados</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=500&q=80" alt="Sistema de riego"><figcaption>Riego</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?w=500&q=80" alt="Herramientas agrícolas"><figcaption>Herramientas</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1592982573971-2c0c56b8a5f0?w=500&q=80" alt="Remolque agrícola"><figcaption>Remolques</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=500&q=80" alt="Motor y transmisión"><figcaption>Motores</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=500&q=80" alt="Neumáticos agrícolas"><figcaption>Neumáticos</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500&q=80" alt="Fumigadora"><figcaption>Fumigadoras</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1591638246343-a5c9c9f4e5f0?w=500&q=80" alt="Tractor"><figcaption>Tractores</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=500&q=80" alt="Implemento agrícola"><figcaption>Implementos</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?w=500&q=80" alt="Repuestos"><figcaption>Repuestos</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=500&q=80" alt="Mantenimiento"><figcaption>Mantenimiento</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1530267981375-f08d743517fb?w=500&q=80" alt="Cosechadora"><figcaption>Cosechadoras</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=500&q=80" alt="Arado"><figcaption>Arados</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=500&q=80" alt="Sistema de riego"><figcaption>Riego</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?w=500&q=80" alt="Herramientas agrícolas"><figcaption>Herramientas</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1592982573971-2c0c56b8a5f0?w=500&q=80" alt="Remolque agrícola"><figcaption>Remolques</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=500&q=80" alt="Motor y transmisión"><figcaption>Motores</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=500&q=80" alt="Neumáticos agrícolas"><figcaption>Neumáticos</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500&q=80" alt="Fumigadora"><figcaption>Fumigadoras</figcaption></figure>
     </div>
   </div>
 </section>
@@ -360,11 +473,15 @@
           <div><b>contacto@aldoagro.com</b><span>Para consultas y presupuestos</span></div>
         </a>
       </div>
-      <form action="https://formspree.io/f/TU_ID_AQUI" method="POST">
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu email" required>
-        <textarea name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
-        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+      <form id="contactForm">
+        <input type="text" id="cfNombre" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" id="cfEmail" name="email" placeholder="Tu email" required>
+        <textarea id="cfMensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
+        <div class="form-actions" style="display:flex; gap:12px; flex-wrap:wrap;">
+          <button type="submit" class="btn btn-primary" style="flex:1;">✉️ Enviar por correo</button>
+          <button type="button" id="cfWhatsapp" class="btn btn-whatsapp" style="flex:1;">💬 Enviar por WhatsApp</button>
+        </div>
+        <p style="font-size:12px; color:#8AA098; margin-top:-4px;">Al enviar, se abre tu app de correo o WhatsApp con el mensaje ya redactado.</p>
       </form>
     </div>
   </div>
@@ -379,7 +496,7 @@
     </div>
     <div class="news-grid">
       <article class="news-card">
-        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=500&q=80" alt="Noticia 1">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=500&q=80" alt="Noticia 1">
         <div class="body">
           <span class="date">Ejemplo · fecha</span>
           <h3>Título de la noticia 1</h3>
@@ -387,7 +504,7 @@
         </div>
       </article>
       <article class="news-card">
-        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=500&q=80" alt="Noticia 2">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=500&q=80" alt="Noticia 2">
         <div class="body">
           <span class="date">Ejemplo · fecha</span>
           <h3>Título de la noticia 2</h3>
@@ -395,7 +512,7 @@
         </div>
       </article>
       <article class="news-card">
-        <img src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=500&q=80" alt="Noticia 3">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=500&q=80" alt="Noticia 3">
         <div class="body">
           <span class="date">Ejemplo · fecha</span>
           <h3>Título de la noticia 3</h3>
@@ -435,15 +552,46 @@
   </div>
 </section>
 
+<section class="faq" id="faq" data-reveal>
+  <div class="wrap">
+    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+      <span class="eyebrow">Ayuda</span>
+      <h2>Preguntas frecuentes</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>¿Hacen envíos de repuestos?</summary>
+        <p>Sí, trabajamos con stock permanente y coordinamos el envío según el destino. Escribinos con la referencia de la pieza y te confirmamos plazo y disponibilidad.</p>
+      </details>
+      <details>
+        <summary>¿Trabajan con pedidos B2B o al por mayor?</summary>
+        <p>Sí, atendemos talleres, distribuidores y explotaciones agrícolas con pedidos por volumen y condiciones adaptadas a cada negocio.</p>
+      </details>
+      <details>
+        <summary>¿Dónde están ubicados?</summary>
+        <p>Nuestra base de operaciones está en Tocoa, Colón, Honduras, con almacenes en Estados Unidos y España para asegurar disponibilidad.</p>
+      </details>
+      <details>
+        <summary>¿Cómo consulto disponibilidad de un repuesto?</summary>
+        <p>Podés escribirnos por WhatsApp o al correo de repuestos indicando marca, modelo o referencia de la pieza.</p>
+      </details>
+      <details>
+        <summary>¿Solo venden repuestos o también dan servicio técnico?</summary>
+        <p>Ofrecemos venta de maquinaria y repuestos, y también servicio de taller, preparación de terreno, servicios industriales y asesoría técnica.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="mapa" id="mapa" data-reveal>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow" style="background:var(--verde-claro); color:var(--verde-oscuro);">Ubicación</span>
       <h2>Dónde estamos</h2>
-      <p>Sustituye el mapa por tu dirección exacta cuando la tengas lista.</p>
+      <p>Almacén y oficina en Tocoa, Colón, Honduras.</p>
     </div>
     <div class="map-frame">
-      <iframe src="https://www.google.com/maps?q=Valladolid,Espa%C3%B1a&output=embed" loading="lazy" allowfullscreen></iframe>
+      <iframe src="https://www.google.com/maps?q=Tocoa,+Colon,+Honduras&output=embed" loading="lazy" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -458,16 +606,16 @@
       <div>
         <h4>Navegación</h4>
         <ul>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#marcas">Marcas</a></li>
-          <li><a href="#productos">Productos</a></li>
-          <li><a href="#noticias">Noticias</a></li>
+          <li><a href="repuestos.html">Repuestos</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="maquinarias.html">Maquinarias</a></li>
+          <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
         </ul>
       </div>
       <div>
         <h4>Empresa</h4>
         <ul>
-          <li><a href="#sobre">Sobre nosotros</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
           <li><a href="#opiniones">Opiniones</a></li>
           <li><a href="#mapa">Ubicación</a></li>
           <li><a href="#contacto">Contacto</a></li>
@@ -478,7 +626,9 @@
         <ul>
           <li><a href="https://wa.me/34722193780">WhatsApp</a></li>
           <li><a href="mailto:contacto@aldoagro.com">contacto@aldoagro.com</a></li>
-          <li>Valladolid, España</li>
+          <li><a href="https://www.facebook.com/share/14jkg7uzwdd/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/_aldoagro/" target="_blank" rel="noopener">Instagram</a></li>
+          <li>Tocoa, Colón, Honduras</li>
         </ul>
       </div>
     </div>
@@ -492,14 +642,29 @@
 <div class="chat-panel" id="chatPanel">
   <div class="chat-head">Aldo Agro — Chat</div>
   <div class="chat-body">
-    <div class="chat-bubble">¡Hola! Este es un chat de ejemplo. Para que responda de verdad, conéctalo a un servicio gratuito como Tawk.to o Crisp.</div>
+    <div class="chat-bubble">¡Hola! Escribe tu mensaje y lo enviamos directo a nuestro WhatsApp.</div>
   </div>
   <div class="chat-foot">
-    <input type="text" placeholder="Escribe un mensaje...">
-    <button aria-label="Enviar">➤</button>
+    <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
+    <button id="chatSend" aria-label="Enviar">➤</button>
   </div>
 </div>
 
+<button class="cart-fab" id="cartFab" aria-label="Ver mi lista de pedido">🛒<span class="cart-count">0</span></button>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-head">Mi lista de pedido <button id="cartClose" aria-label="Cerrar">✕</button></div>
+  <div class="cart-body"><div id="cartList"></div></div>
+  <div class="cart-foot">
+    <p style="font-size:11px; color:var(--gris); margin:0;">Esta lista es solo para pedir cotización — no es una compra ni un pago.</p>
+    <div class="row">
+      <button id="cartSendEmail" class="btn btn-primary">✉️ Correo</button>
+      <button id="cartSendWhatsapp" class="btn btn-whatsapp">💬 WhatsApp</button>
+    </div>
+    <button id="cartClear" class="clear-btn">Vaciar lista</button>
+  </div>
+</div>
+
+<script src="cart.js"></script>
 <script>
 const revealEls = document.querySelectorAll('[data-reveal]');
 const revealObserver = new IntersectionObserver((entries)=>{
@@ -548,6 +713,31 @@ const catalogo = ['Tractores','Implementos','Repuestos','Mantenimiento','Cosecha
 const chatFab = document.getElementById('chatFab');
 const chatPanel = document.getElementById('chatPanel');
 chatFab.addEventListener('click', ()=> chatPanel.classList.toggle('open'));
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+chatSend.addEventListener('click', () => {
+  const msg = chatInput.value.trim();
+  if (!msg) return;
+  window.open(`https://wa.me/34722193780?text=${encodeURIComponent(msg)}`, '_blank');
+  chatInput.value = '';
+});
+chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') chatSend.click(); });
+
+const contactForm = document.getElementById('contactForm');
+function buildContactText(){
+  return `Nombre: ${document.getElementById('cfNombre').value}\nEmail: ${document.getElementById('cfEmail').value}\n\n${document.getElementById('cfMensaje').value}`;
+}
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!contactForm.reportValidity()) return;
+  const subject = encodeURIComponent('Consulta desde la web — ' + document.getElementById('cfNombre').value);
+  const body = encodeURIComponent(buildContactText());
+  window.location.href = `mailto:contacto@aldoagro.com?subject=${subject}&body=${body}`;
+});
+document.getElementById('cfWhatsapp').addEventListener('click', () => {
+  if (!contactForm.reportValidity()) return;
+  window.open(`https://wa.me/34722193780?text=${encodeURIComponent(buildContactText())}`, '_blank');
+});
 </script>
 </body>
 </html>
