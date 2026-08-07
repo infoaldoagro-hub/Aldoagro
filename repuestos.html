@@ -1030,6 +1030,12 @@
         const visible = [...block.querySelectorAll('.product-card')].some(c => c.style.display !== 'none');
         block.style.display = (f === 'all' || visible) ? '' : 'none';
       });
+
+      // Llevar la vista directo a la categoría elegida
+      if (f !== 'all') {
+        const target = document.getElementById(f);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
   });
 
