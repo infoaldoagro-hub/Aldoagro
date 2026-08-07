@@ -336,7 +336,7 @@
   .cart-foot .clear-btn{ background:none; border:1px solid var(--borde); color:var(--gris); border-radius:8px; cursor:pointer; padding:8px; font-size:12px; }
 
   /* Estado sin resultados de búsqueda */
-  .no-results{ display:none; background:var(--azul-claro); border:1px solid var(--borde); border-radius:16px; padding:24px; margin-bottom:28px; }
+  .no-results{ display:block; background:var(--azul-claro); border:1px solid var(--borde); border-radius:16px; padding:24px; margin-bottom:28px; }
   .no-results h3{ font-size:16.5px; margin-bottom:6px; }
   .no-results p{ font-size:13.5px; color:var(--gris); margin-bottom:14px; }
   .no-results-actions{ display:flex; gap:10px; flex-wrap:wrap; }
@@ -445,8 +445,8 @@
         </div>
 
         <div class="no-results" id="noResults">
-          <h3>No encontramos ese producto</h3>
-          <p>Lo tenemos disponible solo por pedido especial. Dejanos tu correo y te confirmamos precio y plazo, o agregalo a tu lista para consultarlo junto con otros productos.</p>
+          <h3>¿No encontrás lo que buscás?</h3>
+          <p>Lo conseguimos por pedido especial. Dejanos tu correo y te confirmamos precio y plazo, o agregalo a tu lista para consultarlo junto con otros productos.</p>
           <div class="no-results-actions">
             <input type="email" id="noResultsEmail" placeholder="Tu email">
             <button type="button" id="noResultsSend" class="btn btn-primary">Enviar solicitud</button>
@@ -876,9 +876,6 @@
       card.style.display = match ? '' : 'none';
       if (match) visibleCount++;
     });
-    if (noResults) {
-      noResults.style.display = (q && visibleCount === 0) ? 'block' : 'none';
-    }
   });
 
   const noResultsEmail = document.getElementById('noResultsEmail');
