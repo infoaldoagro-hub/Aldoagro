@@ -16,7 +16,15 @@
     const items = getCart();
     items.push({ name: name, id: Date.now() + '-' + Math.random().toString(36).slice(2, 7) });
     saveCart(items);
-    openCart();
+    pulseCartFab();
+  }
+  function pulseCartFab() {
+    document.querySelectorAll('.cart-fab').forEach(function (btn) {
+      btn.classList.remove('pulse');
+      void btn.offsetWidth;
+      btn.classList.add('pulse');
+      setTimeout(function () { btn.classList.remove('pulse'); }, 600);
+    });
   }
   function removeFromCart(id) {
     saveCart(getCart().filter(function (i) { return i.id !== id; }));

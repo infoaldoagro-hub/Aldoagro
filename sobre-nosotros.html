@@ -239,6 +239,8 @@
 
   /* Lista de pedido (carrito) */
   .cart-fab{ position:fixed; bottom:22px; right:92px; z-index:80; width:58px; height:58px; border-radius:50%; cursor:pointer; background:#fff; color:var(--tinta); font-size:22px; box-shadow:0 12px 28px rgba(17,38,31,.25); display:flex; align-items:center; justify-content:center; border:1px solid var(--borde); }
+  .cart-fab.pulse{ animation: cartPulse .5s ease; }
+  @keyframes cartPulse{ 0%{ transform:scale(1); } 50%{ transform:scale(1.18); box-shadow:0 12px 28px rgba(27,138,90,.4); } 100%{ transform:scale(1); } }
   .cart-count{ position:absolute; top:-4px; right:-4px; background:var(--verde); color:#fff; font-size:11px; font-weight:700; min-width:20px; height:20px; border-radius:10px; display:none; align-items:center; justify-content:center; padding:0 5px; }
   .cart-panel{ position:fixed; bottom:90px; right:22px; z-index:80; width:min(340px, calc(100vw - 40px)); background:#fff; border-radius:16px; border:1px solid var(--borde); box-shadow:0 24px 48px -12px rgba(22,38,31,.3); display:none; flex-direction:column; overflow:hidden; max-height:70vh; }
   .cart-panel.open{ display:flex; }
