@@ -85,10 +85,10 @@
   .logos-track{ display:flex; gap:16px; width:max-content; animation:scroll-logos 26s linear infinite; }
   .logos-carousel:hover .logos-track{ animation-play-state:paused; }
   @keyframes scroll-logos{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-  .logo-slot{ aspect-ratio:1/1; width:140px; flex-shrink:0; border:1.5px dashed var(--borde); border-radius:14px; display:flex; align-items:center; justify-content:center; background:#fff; transition:border-color .2s, background .2s; }
-  .logo-slot:hover{ border-color:var(--verde); background:var(--verde-claro); }
+  .logo-slot{ aspect-ratio:1/1; width:140px; flex-shrink:0; border:1px solid var(--borde); border-radius:14px; display:flex; align-items:center; justify-content:center; background:#fff; transition:border-color .2s, background .2s, box-shadow .2s; padding:16px; }
+  .logo-slot:hover{ border-color:var(--verde); box-shadow:0 10px 24px -10px rgba(22,38,31,.2); }
   .logo-slot span{ font-size:12px; color:var(--gris); font-weight:500; text-align:center; padding:0 6px; }
-  .logo-slot img{ width:70%; height:70%; object-fit:contain; }
+  .logo-slot img{ width:100%; height:100%; object-fit:contain; }
   .sobre .wrap{ display:grid; gap:48px; align-items:center; }
   @media(min-width:900px){ .sobre .wrap{ grid-template-columns:1fr 1fr; } }
   .sobre-img{ border-radius:18px; overflow:hidden; aspect-ratio:4/3; }
@@ -390,25 +390,25 @@
     <div class="section-head">
       <span class="eyebrow" style="background:var(--azul-claro); color:var(--azul-oscuro);">Confianza</span>
       <h2>Marcas con las que trabajamos</h2>
-      <p>Sustituye cada recuadro por el logo real de la marca (formato PNG con fondo transparente funciona mejor).</p>
+      <p>Distribuimos repuestos y trabajamos con estas marcas líderes en maquinaria agrícola, industrial y de transporte.</p>
     </div>
     <div class="logos-carousel">
       <div class="logos-track" id="logosTrack">
-        <div class="logo-slot"><span>Logo 1</span></div>
-        <div class="logo-slot"><span>Logo 2</span></div>
-        <div class="logo-slot"><span>Logo 3</span></div>
-        <div class="logo-slot"><span>Logo 4</span></div>
-        <div class="logo-slot"><span>Logo 5</span></div>
-        <div class="logo-slot"><span>Logo 6</span></div>
-        <div class="logo-slot"><span>Logo 7</span></div>
-        <div class="logo-slot"><span>Logo 8</span></div>
-        <div class="logo-slot"><span>Logo 9</span></div>
-        <div class="logo-slot"><span>Logo 10</span></div>
-        <div class="logo-slot"><span>Logo 11</span></div>
-        <div class="logo-slot"><span>Logo 12</span></div>
-        <div class="logo-slot"><span>Logo 13</span></div>
-        <div class="logo-slot"><span>Logo 14</span></div>
-        <div class="logo-slot"><span>Logo 15</span></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-john-deere.png" alt="John Deere"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-agco-parts.webp" alt="AGCO Parts"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-caterpillar.png" alt="Caterpillar"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-claas.png" alt="Claas"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-cnh-industrial.png" alt="CNH Industrial"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-case-construction.png" alt="Case Construction"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-case-ih-agriculture.png" alt="Case IH Agriculture"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-daf.png" alt="DAF"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-kubota.png" alt="Kubota"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-sdf.jpg" alt="SDF"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-sany.png" alt="Sany"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-mccormick.png" alt="McCormick"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-iveco.png" alt="Iveco"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-scania.png" alt="Scania"></div>
+        <div class="logo-slot"><img loading="lazy" src="imagenes/marca-fendt.png" alt="Fendt"></div>
       </div>
     </div>
   </div>
