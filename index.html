@@ -125,6 +125,7 @@
   .news-card{ background:#fff; border-radius:16px; overflow:hidden; border:1px solid var(--borde); transition:transform .25s, box-shadow .25s; }
   .news-card:hover{ transform:translateY(-6px); box-shadow:0 24px 48px -16px rgba(22,38,31,.18); }
   .news-card img{ aspect-ratio:16/10; object-fit:cover; }
+  .news-card iframe{ width:100%; aspect-ratio:16/10; border:0; display:block; pointer-events:none; }
   .news-card .body{ padding:20px 22px 24px; }
   .news-card .date{ font-size:12px; color:var(--azul-oscuro); font-weight:600; text-transform:uppercase; letter-spacing:.03em; }
   .news-card h3{ font-size:17px; margin:8px 0 8px; }
@@ -491,27 +492,27 @@
     </div>
     <div class="news-grid">
       <article class="news-card">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=500&q=80" alt="Noticia 1">
+        <iframe src="https://www.google.com/maps?q=Estados+Unidos&output=embed" loading="lazy" title="Mapa de Estados Unidos"></iframe>
         <div class="body">
-          <span class="date">Ejemplo · fecha</span>
-          <h3>Título de la noticia 1</h3>
-          <p>Sustituye este texto por tu propia noticia o novedad de la empresa.</p>
+          <span class="date">Agosto 2026</span>
+          <h3>Ya recibimos pedidos desde Estados Unidos</h3>
+          <p>Contamos con pedidos desde Estados Unidos, con compra y envío de mercadería directo hacia nuestro almacén.</p>
         </div>
       </article>
       <article class="news-card">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=500&q=80" alt="Noticia 2">
+        <iframe src="https://www.google.com/maps?q=España&output=embed" loading="lazy" title="Mapa de España"></iframe>
         <div class="body">
-          <span class="date">Ejemplo · fecha</span>
-          <h3>Título de la noticia 2</h3>
-          <p>Sustituye este texto por tu propia noticia o novedad de la empresa.</p>
+          <span class="date">Agosto 2026</span>
+          <h3>Compra de repuestos en la Unión Europea</h3>
+          <p>Realizamos compra de repuestos en la Unión Europea, con salida de paquetería desde España hacia nuestro almacén.</p>
         </div>
       </article>
       <article class="news-card">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=500&q=80" alt="Noticia 3">
+        <img loading="lazy" src="imagenes/producto-repuestos.png" alt="Repuesto de segunda mano">
         <div class="body">
-          <span class="date">Ejemplo · fecha</span>
-          <h3>Título de la noticia 3</h3>
-          <p>Sustituye este texto por tu propia noticia o novedad de la empresa.</p>
+          <span class="date">Agosto 2026</span>
+          <h3>Búsqueda de repuestos de segunda mano</h3>
+          <p>Contamos con búsqueda de repuestos de segunda mano en camionería y tractores, para ayudarte a encontrar la pieza que necesitás al mejor precio.</p>
         </div>
       </article>
     </div>
