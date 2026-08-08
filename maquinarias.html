@@ -201,6 +201,16 @@
   }
   .cta h3{ font-size:18px; margin-bottom:6px; }
   .cta p{ font-size:14px; color:var(--gris); margin-bottom:16px; }
+  .cta-search{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; max-width:420px; margin:0 auto 16px; }
+  .cta-search input{ flex:1; min-width:180px; border:1px solid var(--borde); border-radius:8px; padding:10px 14px; font-family:inherit; font-size:14px; background:#fff; color:var(--tinta); }
+  .cta-search button{ border:none; background:var(--verde); color:#fff; padding:0 18px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; }
+
+  /* Franja WhatsApp */
+  .wa-banner{ background:#25D366; padding:28px 0; }
+  .wa-banner .wrap{ display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; text-align:center; }
+  .wa-banner p{ color:#fff; font-weight:600; font-size:16px; }
+  .wa-banner .btn-wa-white{ background:#fff; color:#128C3E; }
+  .wa-banner .btn-wa-white:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.15); }
 
   /* Footer */
   .footer-grande{ background:var(--tinta); color:#B8C7BE; padding:48px 0 0; }
@@ -404,8 +414,19 @@
     <div class="cta">
       <h3>¿Necesitas algo concreto?</h3>
       <p>Escríbenos o llámanos y te indicamos disponibilidad y precio.</p>
+      <form class="cta-search" id="ctaSearchForm">
+        <input type="text" id="ctaSearchInput" placeholder="¿Qué estás buscando?">
+        <button type="submit">🔍 Buscar</button>
+      </form>
       <a href="index.html#contacto" class="btn btn-primary">Contactar</a>
     </div>
+  </div>
+</section>
+
+<section class="wa-banner">
+  <div class="wrap">
+    <p>💬 ¿Preferís escribirnos directo?</p>
+    <a href="https://wa.me/34722193780" target="_blank" class="btn btn-wa-white">Escribir por WhatsApp</a>
   </div>
 </section>
 
@@ -413,7 +434,7 @@
   <div class="wrap">
     <div class="footer-cols">
       <div>
-        <h4>Aldo Agro</h4>
+        <img src="imagenes/logo.png" alt="ALDOAGRO" style="height:28px; filter:brightness(0) invert(1); margin-bottom:10px;">
         <p>Maquinaria, repuestos y servicio. También jardinera, pesca y equipamiento personal.</p>
       </div>
       <div>
@@ -480,6 +501,16 @@
   document.querySelectorAll('.mobile-panel a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('mobilePanel').classList.remove('open'));
   });
+
+  const ctaSearchForm = document.getElementById('ctaSearchForm');
+  if (ctaSearchForm) {
+    ctaSearchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const q = document.getElementById('ctaSearchInput').value.trim();
+      if (!q) return;
+      window.open(`https://wa.me/34722193780?text=${encodeURIComponent('Hola, busco: ' + q)}`, '_blank');
+    });
+  }
 
   const chatFab = document.getElementById('chatFab');
   const chatPanel = document.getElementById('chatPanel');
