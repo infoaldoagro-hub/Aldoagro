@@ -201,9 +201,9 @@
   }
   .cta h3{ font-size:18px; margin-bottom:6px; }
   .cta p{ font-size:14px; color:var(--gris); margin-bottom:16px; }
-  .cta-search{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; max-width:420px; margin:0 auto 16px; }
-  .cta-search input{ flex:1; min-width:180px; border:1px solid var(--borde); border-radius:8px; padding:10px 14px; font-family:inherit; font-size:14px; background:#fff; color:var(--tinta); }
-  .cta-search button{ border:none; background:var(--verde); color:#fff; padding:0 18px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; }
+  .cta-actions{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; max-width:480px; margin:0 auto 16px; }
+  .cta-actions input{ flex:1; min-width:180px; border:1px solid var(--borde); border-radius:8px; padding:10px 14px; font-family:inherit; font-size:14px; background:#fff; color:var(--tinta); }
+  .cta-actions .btn{ font-size:13px; padding:10px 16px; }
 
   /* Franja WhatsApp */
   .wa-banner{ background:#25D366; padding:28px 0; }
@@ -413,12 +413,16 @@
 
     <div class="cta">
       <h3>¿Necesitas algo concreto?</h3>
-      <p>Escríbenos o llámanos y te indicamos disponibilidad y precio.</p>
-      <form class="cta-search" id="ctaSearchForm">
-        <input type="text" id="ctaSearchInput" placeholder="¿Qué estás buscando?">
-        <button type="submit">🔍 Buscar</button>
-      </form>
-      <a href="index.html#contacto" class="btn btn-primary">Contactar</a>
+      <p>Contanos qué referencia o producto buscás y dejanos tu email. Te confirmamos disponibilidad y precio.</p>
+      <div class="cta-actions">
+        <input type="text" id="ctaRef" placeholder="¿Qué estás buscando?">
+        <input type="email" id="ctaEmail" placeholder="Tu email">
+      </div>
+      <div class="cta-actions">
+        <button type="button" id="ctaSend" class="btn btn-primary">Enviar solicitud</button>
+        <button type="button" id="ctaCart" class="btn btn-outline">🛒 Añadir a mi lista</button>
+      </div>
+      <a href="mailto:contacto@aldoagro.com" class="btn btn-primary">Contactar</a>
     </div>
   </div>
 </section>
@@ -502,13 +506,24 @@
     a.addEventListener('click', () => document.getElementById('mobilePanel').classList.remove('open'));
   });
 
-  const ctaSearchForm = document.getElementById('ctaSearchForm');
-  if (ctaSearchForm) {
-    ctaSearchForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const q = document.getElementById('ctaSearchInput').value.trim();
-      if (!q) return;
-      window.open(`https://wa.me/34722193780?text=${encodeURIComponent('Hola, busco: ' + q)}`, '_blank');
+  const ctaSend = document.getElementById('ctaSend');
+  if (ctaSend) {
+    ctaSend.addEventListener('click', () => {
+      const ref = document.getElementById('ctaRef').value.trim();
+      const email = document.getElementById('ctaEmail').value.trim();
+      if (!ref) { alert('Contanos qué estás buscando.'); return; }
+      if (!email) { alert('Ingresá tu email para que te confirmemos la disponibilidad.'); return; }
+      const subject = encodeURIComponent('Consulta — ' + ref);
+      const body = encodeURIComponent(`Hola, busco lo siguiente:\n\n${ref}\n\nMi email: ${email}`);
+      window.location.href = `mailto:contacto@aldoagro.com?subject=${subject}&body=${body}`;
+    });
+  }
+  const ctaCart = document.getElementById('ctaCart');
+  if (ctaCart) {
+    ctaCart.addEventListener('click', () => {
+      const ref = document.getElementById('ctaRef').value.trim();
+      if (!ref) { alert('Contanos qué estás buscando.'); return; }
+      if (window.AldoCart) window.AldoCart.addToCart(ref);
     });
   }
 
