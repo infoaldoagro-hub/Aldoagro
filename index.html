@@ -425,9 +425,9 @@
       <h2 style="font-size:clamp(24px,3vw,34px); font-weight:700; margin-bottom:16px;">¡Nacimos para centralizar tus compras!</h2>
       <p style="color:var(--gris); font-size:16px;">En ALDOAGRO nacimos con el objetivo de convertirnos en tu proveedor de confianza de repuestos agrícolas e industriales. Te ayudamos a encontrar las piezas que otros no consiguen, ofrecemos soluciones adaptadas a tu presupuesto y ponemos a tu disposición un servicio cercano, rápido y comprometido con las necesidades de tu negocio.</p>
       <div class="stat-row">
-        <div class="stat"><b data-count="3">0</b><span>áreas de servicio</span></div>
-        <div class="stat"><b data-count="100" data-suffix="%">0</b><span>trato directo</span></div>
-        <div class="stat"><b data-count="24" data-suffix="h">0</b><span>respuesta rápida</span></div>
+        <div class="stat"><b data-count="3">3</b><span>áreas de servicio</span></div>
+        <div class="stat"><b data-count="100" data-suffix="%">100%</b><span>trato directo</span></div>
+        <div class="stat"><b data-count="24" data-suffix="h">24h</b><span>respuesta rápida</span></div>
       </div>
       <a href="sobre-nosotros.html" class="btn btn-outline" style="margin-top:28px;">Conocer nuestra historia</a>
     </div>
@@ -676,6 +676,7 @@ const counterObserver = new IntersectionObserver((entries)=>{
     const target = parseInt(el.getAttribute('data-count'), 10);
     const suffix = el.getAttribute('data-suffix') || '';
     let current = 0;
+    el.textContent = current + suffix;
     const step = Math.max(1, Math.round(target/40));
     const timer = setInterval(()=>{
       current += step;
