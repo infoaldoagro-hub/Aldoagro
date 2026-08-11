@@ -1018,6 +1018,7 @@
 </div>
 
 <script src="cart.js"></script>
+<script src="contact.js"></script>
 <script>
   document.querySelectorAll('.mobile-panel a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('mobilePanel').classList.remove('open'));
@@ -1089,9 +1090,31 @@
       const query = searchInput.value.trim();
       const email = noResultsEmail.value.trim();
       if (!email) { alert('Ingresá tu email para que te confirmemos la disponibilidad.'); return; }
-      const subject = encodeURIComponent('Pedido especial de repuesto — ' + query);
-      const body = encodeURIComponent(`Hola, busco la siguiente pieza que no encontré en el catálogo:\n\n${query}\n\nMi email: ${email}`);
-      window.location.href = `mailto:repuestos@aldoagro.com?subject=${subject}&body=${body}`;
+      noResultsSend.disabled = true;
+      noResultsSend.textContent = 'Enviando...';
+      fetch('/api/contacto', {
+        method: 'POST',
+        body: new URLSearchParams({
+          nombre: 'Pedido especial — Repuestos',
+          email: email,
+          mensaje: 'Busco la siguiente pieza que no encontré en el catálogo:\n\n' + query
+        })
+      })
+        .then(res => res.json().then(data => ({ ok: res.ok && data.ok })))
+        .then(result => {
+          if (result.ok) {
+            noResultsSend.textContent = '✓ Enviado';
+          } else {
+            noResultsSend.disabled = false;
+            noResultsSend.textContent = 'Enviar solicitud';
+            alert('No se pudo enviar. Probá de nuevo o escribinos por WhatsApp.');
+          }
+        })
+        .catch(() => {
+          noResultsSend.disabled = false;
+          noResultsSend.textContent = 'Enviar solicitud';
+          alert('No se pudo enviar. Probá de nuevo o escribinos por WhatsApp.');
+        });
     });
   }
   if (noResultsCart) {

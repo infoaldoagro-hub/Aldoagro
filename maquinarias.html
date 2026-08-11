@@ -501,6 +501,7 @@
 </div>
 
 <script src="cart.js"></script>
+<script src="contact.js"></script>
 <script>
   document.querySelectorAll('.mobile-panel a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('mobilePanel').classList.remove('open'));
@@ -513,9 +514,31 @@
       const email = document.getElementById('ctaEmail').value.trim();
       if (!ref) { alert('Contanos qué estás buscando.'); return; }
       if (!email) { alert('Ingresá tu email para que te confirmemos la disponibilidad.'); return; }
-      const subject = encodeURIComponent('Consulta — ' + ref);
-      const body = encodeURIComponent(`Hola, busco lo siguiente:\n\n${ref}\n\nMi email: ${email}`);
-      window.location.href = `mailto:contacto@aldoagro.com?subject=${subject}&body=${body}`;
+      ctaSend.disabled = true;
+      ctaSend.textContent = 'Enviando...';
+      fetch('/api/contacto', {
+        method: 'POST',
+        body: new URLSearchParams({
+          nombre: 'Consulta — Maquinarias',
+          email: email,
+          mensaje: 'Busco lo siguiente:\n\n' + ref
+        })
+      })
+        .then(res => res.json().then(data => ({ ok: res.ok && data.ok })))
+        .then(result => {
+          if (result.ok) {
+            ctaSend.textContent = '✓ Enviado';
+          } else {
+            ctaSend.disabled = false;
+            ctaSend.textContent = 'Enviar solicitud';
+            alert('No se pudo enviar. Probá de nuevo o escribinos por WhatsApp.');
+          }
+        })
+        .catch(() => {
+          ctaSend.disabled = false;
+          ctaSend.textContent = 'Enviar solicitud';
+          alert('No se pudo enviar. Probá de nuevo o escribinos por WhatsApp.');
+        });
     });
   }
   const ctaCart = document.getElementById('ctaCart');
