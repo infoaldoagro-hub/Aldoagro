@@ -1,6 +1,6 @@
 import { EmailMessage } from "cloudflare:email";
 
-const DEST_EMAIL = "contacto@aldoagro.com";
+const DEST_EMAIL = "infoaldoagro@gmail.com";
 const FROM_EMAIL = "web@aldoagro.com";
 
 function json(data, status) {
