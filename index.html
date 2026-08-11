@@ -474,11 +474,16 @@
         <input type="email" id="cfEmail" name="email" placeholder="Tu email" required>
         <textarea id="cfMensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
         <div class="form-actions" style="display:flex; gap:12px; flex-wrap:wrap;">
-          <button type="submit" class="btn btn-primary" style="flex:1;">✉️ Enviar por correo</button>
+          <button type="submit" id="cfSubmit" class="btn btn-primary" style="flex:1;">✉️ Enviar mensaje</button>
           <button type="button" id="cfWhatsapp" class="btn btn-whatsapp" style="flex:1;">💬 Enviar por WhatsApp</button>
         </div>
-        <p style="font-size:12px; color:#8AA098; margin-top:-4px;">Al enviar, se abre tu app de correo o WhatsApp con el mensaje ya redactado.</p>
+        <p id="cfHint" style="font-size:12px; color:#8AA098; margin-top:-4px;">Te responderemos lo antes posible. También puedes escribirnos por WhatsApp.</p>
       </form>
+      <div id="cfSuccess" style="display:none; text-align:center; padding:32px 16px;">
+        <div style="font-size:40px; margin-bottom:12px;">✅</div>
+        <h3 style="color:#fff; margin-bottom:8px;">¡Gracias por escribirnos!</h3>
+        <p style="color:#8AA098;">En breve un técnico se contactará contigo.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -727,9 +732,29 @@ function buildContactText(){
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
   if (!contactForm.reportValidity()) return;
-  const subject = encodeURIComponent('Consulta desde la web — ' + document.getElementById('cfNombre').value);
-  const body = encodeURIComponent(buildContactText());
-  window.location.href = `mailto:contacto@aldoagro.com?subject=${subject}&body=${body}`;
+  const submitBtn = document.getElementById('cfSubmit');
+  const hint = document.getElementById('cfHint');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando...';
+  fetch('/api/contacto', { method: 'POST', body: new FormData(contactForm) })
+    .then(function (res) { return res.json().then(function (data) { return { ok: res.ok && data.ok, data: data }; }); })
+    .then(function (result) {
+      if (result.ok) {
+        contactForm.style.display = 'none';
+        document.getElementById('cfSuccess').style.display = 'block';
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '✉️ Enviar mensaje';
+        hint.textContent = 'No se pudo enviar. Probá de nuevo o escribinos por WhatsApp.';
+        hint.style.color = '#e07b5f';
+      }
+    })
+    .catch(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = '✉️ Enviar mensaje';
+      hint.textContent = 'No se pudo enviar. Probá de nuevo o escribinos por WhatsApp.';
+      hint.style.color = '#e07b5f';
+    });
 });
 document.getElementById('cfWhatsapp').addEventListener('click', () => {
   if (!contactForm.reportValidity()) return;
