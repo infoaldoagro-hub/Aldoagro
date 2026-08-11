@@ -26,6 +26,20 @@ function escapeHeader(str) {
   return String(str).replace(/[\r\n]/g, " ").slice(0, 300);
 }
 
+function encodeSubject(str) {
+  const bytes = new TextEncoder().encode(str);
+  let binary = "";
+  bytes.forEach((b) => { binary += String.fromCharCode(b); });
+  return "=?UTF-8?B?" + btoa(binary) + "?=";
+}
+
+function utf8Binary(str) {
+  const bytes = new TextEncoder().encode(str);
+  let out = "";
+  for (let i = 0; i < bytes.length; i++) out += String.fromCharCode(bytes[i]);
+  return out;
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -45,7 +59,7 @@ export default {
         return json({ ok: false, error: "missing_fields" }, 400);
       }
 
-      const subject = escapeHeader("Nuevo mensaje de contacto - " + nombre);
+      const subject = encodeSubject(escapeHeader("Nuevo mensaje de contacto - " + nombre));
       const bodyText =
         "Nombre: " + nombre + "\r\n" +
         "Email: " + email + "\r\n\r\n" +
@@ -57,8 +71,9 @@ export default {
         "Reply-To: " + escapeHeader(email) + "\r\n" +
         "Subject: " + subject + "\r\n" +
         "Content-Type: text/plain; charset=UTF-8\r\n" +
+        "Content-Transfer-Encoding: 8bit\r\n" +
         "MIME-Version: 1.0\r\n\r\n" +
-        bodyText;
+        utf8Binary(bodyText);
 
       try {
         const msg = new EmailMessage(FROM_EMAIL, DEST_EMAIL, raw);
