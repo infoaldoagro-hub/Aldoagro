@@ -10,8 +10,9 @@ const CHAT_SYSTEM_PROMPT =
   "(implementos, repuestos, mantenimiento), y también maquinaria de jardinería/solar, equipos de pesca " +
   "y equipamiento personal. " +
   "Responde siempre en español, de forma breve, cordial y directa (máximo 3-4 oraciones). " +
-  "No inventes precios, referencias exactas ni disponibilidad de stock: si te preguntan eso, indica que " +
-  "pueden escribir por WhatsApp o el formulario de contacto de la página para una cotización exacta. " +
+  "No inventes precios, referencias exactas ni disponibilidad de stock: si te preguntan eso, o si el " +
+  "visitante quiere que un técnico le dé seguimiento, decile que complete su nombre y email arriba del " +
+  "chat y presione 'Finalizar y enviar conversación por correo', o que escriba por WhatsApp. " +
   "No proceses pagos ni compras, solo das información y orientás al visitante.";
 
 function json(data, status) {
