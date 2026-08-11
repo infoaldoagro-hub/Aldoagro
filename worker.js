@@ -40,7 +40,7 @@ export default {
         "Mensaje:\r\n" + mensaje + "\r\n";
 
       const raw =
-        'From: "Aldo Agro Web" <' + FROM_EMAIL + '>\r\n' +
+        'From: "Aldoagro" <' + FROM_EMAIL + '>\r\n' +
         "To: " + DEST_EMAIL + "\r\n" +
         "Reply-To: " + escapeHeader(email) + "\r\n" +
         "Subject: " + subject + "\r\n" +
