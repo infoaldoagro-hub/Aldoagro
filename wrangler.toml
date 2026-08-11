@@ -9,3 +9,6 @@ binding = "ASSETS"
 
 [[send_email]]
 name = "SEB"
+
+[ai]
+binding = "AI"

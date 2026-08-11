@@ -3,6 +3,17 @@ import { EmailMessage } from "cloudflare:email";
 const DEST_EMAIL = "infoaldoagro@gmail.com";
 const FROM_EMAIL = "web@aldoagro.com";
 
+const CHAT_SYSTEM_PROMPT =
+  "Eres el asistente virtual de ALDOAGRO, una empresa familiar hondureña con sede en Tocoa, Colón, " +
+  "fundada en 2024, con almacenes en Honduras, Estados Unidos y España. " +
+  "ALDOAGRO vende repuestos y maquinaria agrícola, industrial y de camionería, ofrece servicios técnicos " +
+  "(implementos, repuestos, mantenimiento), y también maquinaria de jardinería/solar, equipos de pesca " +
+  "y equipamiento personal. " +
+  "Responde siempre en español, de forma breve, cordial y directa (máximo 3-4 oraciones). " +
+  "No inventes precios, referencias exactas ni disponibilidad de stock: si te preguntan eso, indica que " +
+  "pueden escribir por WhatsApp o el formulario de contacto de la página para una cotización exacta. " +
+  "No proceses pagos ni compras, solo das información y orientás al visitante.";
+
 function json(data, status) {
   return new Response(JSON.stringify(data), {
     status: status || 200,
@@ -54,6 +65,44 @@ export default {
         return json({ ok: true });
       } catch (err) {
         return json({ ok: false, error: "send_failed", detail: String(err) }, 502);
+      }
+    }
+
+    if (request.method === "POST" && url.pathname === "/api/chat") {
+      let body;
+      try {
+        body = await request.json();
+      } catch (err) {
+        return json({ ok: false, error: "invalid_json" }, 400);
+      }
+
+      const message = (body && body.message ? String(body.message) : "").trim().slice(0, 500);
+      if (!message) {
+        return json({ ok: false, error: "empty_message" }, 400);
+      }
+
+      const historyIn = Array.isArray(body.history) ? body.history : [];
+      const history = historyIn
+        .slice(-6)
+        .filter((m) => m && (m.role === "user" || m.role === "assistant") && typeof m.content === "string")
+        .map((m) => ({ role: m.role, content: String(m.content).slice(0, 500) }));
+
+      const messages = [
+        { role: "system", content: CHAT_SYSTEM_PROMPT },
+        ...history,
+        { role: "user", content: message },
+      ];
+
+      try {
+        const result = await env.AI.run("@cf/meta/llama-3.1-8b-instruct", {
+          messages: messages,
+          max_tokens: 300,
+        });
+        const reply = (result && result.response ? String(result.response) : "").trim();
+        if (!reply) throw new Error("empty_response");
+        return json({ ok: true, reply: reply });
+      } catch (err) {
+        return json({ ok: false, error: "ai_failed", detail: String(err) }, 502);
       }
     }
 

@@ -314,6 +314,7 @@
   .chat-head{ background:var(--verde); color:#fff; padding:16px 18px; font-weight:600; font-size:14px; }
   .chat-body{ padding:16px 18px; font-size:13.5px; color:var(--gris); display:flex; flex-direction:column; gap:10px; max-height:220px; overflow-y:auto; }
   .chat-bubble{ background:var(--verde-claro); border-radius:12px; padding:10px 14px; color:var(--tinta); align-self:flex-start; max-width:85%; }
+  .chat-bubble-user{ background:var(--verde); color:#fff; align-self:flex-end; }
   .chat-foot{ padding:12px; border-top:1px solid var(--borde); display:flex; gap:8px; }
   .chat-foot input{ flex:1; border:1px solid var(--borde); border-radius:100px; padding:10px 14px; font-family:inherit; font-size:13px; outline:none; }
   .chat-foot button{ border:none; background:var(--verde); color:#fff; width:36px; height:36px; border-radius:50%; cursor:pointer; }
@@ -695,7 +696,7 @@
 <div class="chat-panel" id="chatPanel">
   <div class="chat-head">ALDOAGRO — Chat</div>
   <div class="chat-body">
-    <div class="chat-bubble">¡Hola! Escribe tu mensaje y lo enviamos directo a nuestro WhatsApp.</div>
+    <div class="chat-bubble">¡Hola! Soy el asistente de ALDOAGRO. Preguntame sobre nuestros productos, servicios o envíos.</div>
   </div>
   <div class="chat-foot">
     <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
@@ -719,25 +720,12 @@
 
 <script src="cart.js"></script>
 <script src="contact.js"></script>
+<script src="chat.js"></script>
 <script>
   // Mobile panel
   document.querySelectorAll('.mobile-panel a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('mobilePanel').classList.remove('open'));
   });
-
-  // Chat flotante
-  const chatFab = document.getElementById('chatFab');
-  const chatPanel = document.getElementById('chatPanel');
-  chatFab.addEventListener('click', () => chatPanel.classList.toggle('open'));
-  const chatInput = document.getElementById('chatInput');
-  const chatSend = document.getElementById('chatSend');
-  chatSend.addEventListener('click', () => {
-    const msg = chatInput.value.trim();
-    if (!msg) return;
-    window.open(`https://wa.me/34722193780?text=${encodeURIComponent(msg)}`, '_blank');
-    chatInput.value = '';
-  });
-  chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') chatSend.click(); });
 
   // Filtros
   const filterBtns = document.querySelectorAll('.filter-btn');
