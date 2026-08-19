@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -364,8 +364,8 @@
 <body>
 
 <header>
-  <div class="nav">
-    <a href="index.html" class="logo"><img src="imagenes/logo.png" alt="ALDOAGRO" style="height:36px;"></a>
+  <div class="nav" role="navigation" aria-label="Navegación principal">
+    <a href="index.html" class="logo"><img width="423" height="109" src="imagenes/logo.png" alt="ALDOAGRO" style="height:36px;"></a>
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="servicios.html" class="active">Servicios</a></li>
@@ -388,6 +388,7 @@
     </ul>
   </div>
 </header>
+<main>
 
 <div class="breadcrumb"><div class="wrap"><a href="index.html">Inicio</a><span>/</span><span>Servicios</span></div></div>
 
@@ -408,7 +409,7 @@
       <button class="filter-btn" data-filter="servicio">Servicio técnico</button>
     </div>
     <form class="search-shop" onsubmit="event.preventDefault();">
-      <input type="text" id="searchInput" placeholder="Buscar en el catálogo...">
+      <input type="text" id="searchInput" placeholder="Buscar en el catálogo..." aria-label="Buscar en el catálogo">
       <button type="submit" aria-label="Buscar">🔍</button>
     </form>
   </div>
@@ -453,7 +454,7 @@
           <h3>¿No encontrás lo que buscás?</h3>
           <p>Lo conseguimos por pedido especial. Dejanos tu correo y te confirmamos precio y plazo, o agregalo a tu lista para consultarlo junto con otros productos.</p>
           <div class="no-results-actions">
-            <input type="email" id="noResultsEmail" placeholder="Tu email">
+            <input type="email" id="noResultsEmail" placeholder="Tu email" aria-label="Tu email">
             <button type="button" id="noResultsSend" class="btn btn-primary">Enviar solicitud</button>
             <button type="button" id="noResultsCart" class="btn btn-outline">🛒 Añadir a mi lista</button>
           </div>
@@ -464,7 +465,7 @@
           <!-- 1 -->
           <article class="product-card" data-cat="implementos">
             <div class="product-img">
-              <img loading="lazy" src="imagenes/servicio-siembra-precision.jpg" alt="Sembradora de precisión">
+              <img width="741" height="616" loading="lazy" src="imagenes/servicio-siembra-precision.jpg" alt="Sembradora de precisión">
               <span class="product-badge">Disponible</span>
             </div>
             <div class="product-body">
@@ -482,7 +483,7 @@
           <!-- 2 -->
           <article class="product-card" data-cat="repuestos">
             <div class="product-img">
-              <img loading="lazy" src="imagenes/servicio-kit-filtros-motor.jpg" alt="Kit de filtros motor">
+              <img width="531" height="444" loading="lazy" src="imagenes/servicio-kit-filtros-motor.jpg" alt="Kit de filtros motor">
               <span class="product-badge blue">Original</span>
             </div>
             <div class="product-body">
@@ -500,7 +501,7 @@
           <!-- 3 -->
           <article class="product-card" data-cat="repuestos">
             <div class="product-img">
-              <img loading="lazy" src="imagenes/servicio-neumaticos-agricolas.jpg" alt="Neumáticos agrícolas">
+              <img width="429" height="431" loading="lazy" src="imagenes/servicio-neumaticos-agricolas.jpg" alt="Neumáticos agrícolas">
               <span class="product-badge">Stock</span>
             </div>
             <div class="product-body">
@@ -518,7 +519,7 @@
           <!-- 4 -->
           <article class="product-card" data-cat="servicio">
             <div class="product-img">
-              <img loading="lazy" src="imagenes/servicio-revision-precampana.jpg" alt="Revisión pre-campaña">
+              <img width="651" height="429" loading="lazy" src="imagenes/servicio-revision-precampana.jpg" alt="Revisión pre-campaña">
               <span class="product-badge orange">Servicio</span>
             </div>
             <div class="product-body">
@@ -536,7 +537,7 @@
           <!-- 5 -->
           <article class="product-card" data-cat="servicio">
             <div class="product-img">
-              <img loading="lazy" src="imagenes/servicio-plan-mantenimiento-anual.jpg" alt="Plan de mantenimiento anual">
+              <img width="1100" height="597" loading="lazy" src="imagenes/servicio-plan-mantenimiento-anual.jpg" alt="Plan de mantenimiento anual">
               <span class="product-badge">Plan anual</span>
             </div>
             <div class="product-body">
@@ -554,7 +555,7 @@
           <!-- 6 -->
           <article class="product-card" data-cat="repuestos">
             <div class="product-img">
-              <img loading="lazy" src="imagenes/servicio-componentes-hidraulicos.jpg" alt="Componentes hidráulicos">
+              <img width="508" height="414" loading="lazy" src="imagenes/servicio-componentes-hidraulicos.jpg" alt="Componentes hidráulicos">
               <span class="product-badge blue">Original</span>
             </div>
             <div class="product-body">
@@ -616,23 +617,23 @@
           <p>Imágenes reales de referencia — sustituye por fotos de tu taller, almacén y equipos en campo.</p>
           <div class="img-mosaic">
             <figure class="big">
-              <img loading="lazy" src="imagenes/servicio-taller-diagnostico.jpg" alt="Zona de taller y diagnóstico">
+              <img width="709" height="428" loading="lazy" src="imagenes/servicio-taller-diagnostico.jpg" alt="Zona de taller y diagnóstico">
               <figcaption>Zona de taller y diagnóstico</figcaption>
             </figure>
             <figure>
-              <img loading="lazy" src="imagenes/servicio-entrega-explotacion.jpg" alt="Entrega en explotación">
+              <img width="1100" height="600" loading="lazy" src="imagenes/servicio-entrega-explotacion.jpg" alt="Entrega en explotación">
               <figcaption>Entrega en explotación</figcaption>
             </figure>
             <figure>
-              <img loading="lazy" src="imagenes/servicio-equipos-campana.jpg" alt="Equipos en campaña">
+              <img width="1009" height="673" loading="lazy" src="imagenes/servicio-equipos-campana.jpg" alt="Equipos en campaña">
               <figcaption>Equipos en campaña</figcaption>
             </figure>
             <figure>
-              <img loading="lazy" src="imagenes/servicio-preparacion-suelo.jpg" alt="Preparación de suelo">
+              <img width="688" height="468" loading="lazy" src="imagenes/servicio-preparacion-suelo.jpg" alt="Preparación de suelo">
               <figcaption>Preparación de suelo</figcaption>
             </figure>
             <figure>
-              <img loading="lazy" src="imagenes/servicio-siembra-precision.jpg" alt="Siembra de precisión">
+              <img width="741" height="616" loading="lazy" src="imagenes/servicio-siembra-precision.jpg" alt="Siembra de precisión">
               <figcaption>Siembra de precisión</figcaption>
             </figure>
           </div>
@@ -652,6 +653,7 @@
   </div>
 </section>
 
+</main>
 <footer class="footer-grande">
   <div class="wrap">
     <div class="footer-cols">
@@ -701,7 +703,7 @@
     <div class="chat-bubble">¡Hola! Soy el asistente de ALDOAGRO. Preguntame sobre nuestros productos, servicios o envíos.</div>
   </div>
   <div class="chat-foot">
-    <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
+    <input type="text" id="chatInput" placeholder="Escribe un mensaje..." aria-label="Escribe un mensaje">
     <button id="chatSend" aria-label="Enviar">➤</button>
   </div>
 </div>

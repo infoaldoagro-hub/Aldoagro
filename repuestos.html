@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -419,8 +419,8 @@
 <body>
 
 <header>
-  <div class="nav">
-    <a href="index.html" class="logo"><img src="imagenes/logo.png" alt="ALDOAGRO" style="height:36px;"></a>
+  <div class="nav" role="navigation" aria-label="Navegación principal">
+    <a href="index.html" class="logo"><img width="423" height="109" src="imagenes/logo.png" alt="ALDOAGRO" style="height:36px;"></a>
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="servicios.html">Servicios</a></li>
@@ -441,6 +441,7 @@
     <a href="sobre-nosotros.html">Sobre Nosotros</a>
   </div>
 </header>
+<main>
 
 <div class="breadcrumb"><div class="wrap"><a href="index.html">Inicio</a><span>/</span><span>Repuestos</span></div></div>
 
@@ -452,7 +453,7 @@
 
     <div class="cat-strip">
       <a href="#agricola" class="cat-card">
-        <img loading="lazy" src="imagenes/categoria-maquina-agricola.jpg" alt="Máquina agrícola">
+        <img width="1100" height="518" loading="lazy" src="imagenes/categoria-maquina-agricola.jpg" alt="Máquina agrícola">
         <span class="tag">Categoría</span>
         <div class="label">
           <b>Máquina agrícola</b>
@@ -460,7 +461,7 @@
         </div>
       </a>
       <a href="#industrial" class="cat-card">
-        <img loading="lazy" src="imagenes/categoria-maquina-industrial.png" alt="Máquina industrial">
+        <img width="612" height="408" loading="lazy" src="imagenes/categoria-maquina-industrial.png" alt="Máquina industrial">
         <span class="tag">Categoría</span>
         <div class="label">
           <b>Máquina industrial</b>
@@ -468,7 +469,7 @@
         </div>
       </a>
       <a href="#camioneria" class="cat-card">
-        <img loading="lazy" src="imagenes/categoria-camioneria.jpg" alt="Camionería">
+        <img width="1100" height="733" loading="lazy" src="imagenes/categoria-camioneria.jpg" alt="Camionería">
         <span class="tag">Categoría</span>
         <div class="label">
           <b>Camionería</b>
@@ -488,7 +489,7 @@
       <button class="filter-btn" data-filter="camioneria">Camionería</button>
     </div>
     <form class="search-box" onsubmit="event.preventDefault();">
-      <input type="text" id="searchInput" placeholder="Buscar por nombre o ref...">
+      <input type="text" id="searchInput" placeholder="Buscar por nombre o ref..." aria-label="Buscar por nombre o referencia">
       <button type="submit" aria-label="Buscar">🔍</button>
     </form>
   </div>
@@ -529,7 +530,7 @@
           <h3>¿No encontrás la referencia que buscás?</h3>
           <p>La conseguimos por pedido especial. Dejanos tu correo y te confirmamos precio y plazo, o agregala a tu lista para consultarla junto con otras piezas.</p>
           <div class="no-results-actions">
-            <input type="email" id="noResultsEmail" placeholder="Tu email">
+            <input type="email" id="noResultsEmail" placeholder="Tu email" aria-label="Tu email">
             <button type="button" id="noResultsSend" class="btn btn-primary">Enviar solicitud</button>
             <button type="button" id="noResultsCart" class="btn btn-outline">🛒 Añadir a mi lista</button>
           </div>
@@ -549,7 +550,7 @@
 
             <article class="product-card" data-cat="agricola">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-kit-filtros-tractor.jpg" alt="Kit filtros motor tractor">
+                <img width="531" height="444" loading="lazy" src="imagenes/repuesto-kit-filtros-tractor.jpg" alt="Kit filtros motor tractor">
                 <span class="badge stock">Stock</span>
               </div>
               <div class="product-body">
@@ -567,7 +568,7 @@
 
             <article class="product-card" data-cat="agricola">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-neumatico-tractor.jpg" alt="Neumático radial 480/70 R28">
+                <img width="429" height="431" loading="lazy" src="imagenes/repuesto-neumatico-tractor.jpg" alt="Neumático radial 480/70 R28">
                 <span class="badge stock">Stock</span>
               </div>
               <div class="product-body">
@@ -585,7 +586,7 @@
 
             <article class="product-card" data-cat="agricola">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-bomba-hidraulica-AT318271.png" alt="Bomba hidráulica principal">
+                <img width="820" height="766" loading="lazy" src="imagenes/repuesto-bomba-hidraulica-AT318271.png" alt="Bomba hidráulica principal">
                 <span class="badge nuevo">Original</span>
               </div>
               <div class="product-body">
@@ -603,7 +604,7 @@
 
             <article class="product-card" data-cat="agricola">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-correa-cosechadora.jpg" alt="Correa trapecial cosechadora">
+                <img width="428" height="430" loading="lazy" src="imagenes/repuesto-correa-cosechadora.jpg" alt="Correa trapecial cosechadora">
                 <span class="badge stock">Stock</span>
               </div>
               <div class="product-body">
@@ -621,7 +622,7 @@
 
             <article class="product-card" data-cat="agricola">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-discos-arado.jpg" alt="Discos de arado / grada">
+                <img width="432" height="428" loading="lazy" src="imagenes/repuesto-discos-arado.jpg" alt="Discos de arado / grada">
                 <span class="badge oferta">Oferta</span>
               </div>
               <div class="product-body">
@@ -639,7 +640,7 @@
 
             <article class="product-card" data-cat="agricola">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-boquillas-pulverizador.jpg" alt="Boquillas y filtros pulverizador">
+                <img width="428" height="428" loading="lazy" src="imagenes/repuesto-boquillas-pulverizador.jpg" alt="Boquillas y filtros pulverizador">
                 <span class="badge stock">Stock</span>
               </div>
               <div class="product-body">
@@ -671,7 +672,7 @@
 
             <article class="product-card" data-cat="industrial">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-rodamiento-conico.jpg" alt="Rodamiento de rodillos cónicos">
+                <img width="431" height="427" loading="lazy" src="imagenes/repuesto-rodamiento-conico.jpg" alt="Rodamiento de rodillos cónicos">
                 <span class="badge stock">Stock</span>
               </div>
               <div class="product-body">
@@ -689,7 +690,7 @@
 
             <article class="product-card" data-cat="industrial">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-bomba-engranajes-RE568070.png" alt="Bomba de engranajes">
+                <img width="811" height="654" loading="lazy" src="imagenes/repuesto-bomba-engranajes-RE568070.png" alt="Bomba de engranajes">
                 <span class="badge nuevo">Original</span>
               </div>
               <div class="product-body">
@@ -707,7 +708,7 @@
 
             <article class="product-card" data-cat="industrial">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-juntas-retenes.jpg" alt="Juntas y retenes hidráulicos">
+                <img width="432" height="432" loading="lazy" src="imagenes/repuesto-juntas-retenes.jpg" alt="Juntas y retenes hidráulicos">
                 <span class="badge stock">Stock</span>
               </div>
               <div class="product-body">
@@ -725,7 +726,7 @@
 
             <article class="product-card" data-cat="industrial">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-filtro-hidraulico-retorno.jpg" alt="Filtro hidráulico retorno">
+                <img width="426" height="432" loading="lazy" src="imagenes/repuesto-filtro-hidraulico-retorno.jpg" alt="Filtro hidráulico retorno">
                 <span class="badge stock">Stock</span>
               </div>
               <div class="product-body">
@@ -743,7 +744,7 @@
 
             <article class="product-card" data-cat="industrial">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-correas-dentadas.jpg" alt="Correas industriales dentadas">
+                <img width="430" height="434" loading="lazy" src="imagenes/repuesto-correas-dentadas.jpg" alt="Correas industriales dentadas">
                 <span class="badge bajo">Últimas uds.</span>
               </div>
               <div class="product-body">
@@ -761,7 +762,7 @@
 
             <article class="product-card" data-cat="industrial">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-valvula-direccional.jpg" alt="Válvula direccional 4/3">
+                <img width="354" height="356" loading="lazy" src="imagenes/repuesto-valvula-direccional.jpg" alt="Válvula direccional 4/3">
                 <span class="badge nuevo">Original</span>
               </div>
               <div class="product-body">
@@ -793,7 +794,7 @@
 
             <article class="product-card" data-cat="camioneria">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-pastillas-freno.jpg" alt="Pastillas y discos freno">
+                <img width="351" height="360" loading="lazy" src="imagenes/repuesto-pastillas-freno.jpg" alt="Pastillas y discos freno">
                 <span class="badge stock">Stock</span>
               </div>
               <div class="product-body">
@@ -811,7 +812,7 @@
 
             <article class="product-card" data-cat="camioneria">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-neumatico-camion.jpg" alt="Neumático 315/80 R22.5">
+                <img width="360" height="363" loading="lazy" src="imagenes/repuesto-neumatico-camion.jpg" alt="Neumático 315/80 R22.5">
                 <span class="badge stock">Stock</span>
               </div>
               <div class="product-body">
@@ -829,7 +830,7 @@
 
             <article class="product-card" data-cat="camioneria">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-filtros-camion.jpg" alt="Kit filtros motor camión">
+                <img width="500" height="375" loading="lazy" src="imagenes/repuesto-filtros-camion.jpg" alt="Kit filtros motor camión">
                 <span class="badge stock">Stock</span>
               </div>
               <div class="product-body">
@@ -847,7 +848,7 @@
 
             <article class="product-card" data-cat="camioneria">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-suspension.jpg" alt="Amortiguadores y ballestas">
+                <img width="360" height="360" loading="lazy" src="imagenes/repuesto-suspension.jpg" alt="Amortiguadores y ballestas">
                 <span class="badge nuevo">Original</span>
               </div>
               <div class="product-body">
@@ -865,7 +866,7 @@
 
             <article class="product-card" data-cat="camioneria">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-faros-led.jpg" alt="Faros y pilotos LED">
+                <img width="356" height="397" loading="lazy" src="imagenes/repuesto-faros-led.jpg" alt="Faros y pilotos LED">
                 <span class="badge stock">Stock</span>
               </div>
               <div class="product-body">
@@ -883,7 +884,7 @@
 
             <article class="product-card" data-cat="camioneria">
               <div class="product-img">
-                <img loading="lazy" src="imagenes/repuesto-kit-embrague.jpg" alt="Kit embrague completo">
+                <img width="363" height="378" loading="lazy" src="imagenes/repuesto-kit-embrague.jpg" alt="Kit embrague completo">
                 <span class="badge oferta">Oferta</span>
               </div>
               <div class="product-body">
@@ -954,6 +955,7 @@
   </div>
 </section>
 
+</main>
 <footer class="footer-grande">
   <div class="wrap">
     <div class="footer-cols">
@@ -1002,7 +1004,7 @@
     <div class="chat-bubble">¡Hola! Soy el asistente de ALDOAGRO. Preguntame sobre nuestros productos, servicios o envíos.</div>
   </div>
   <div class="chat-foot">
-    <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
+    <input type="text" id="chatInput" placeholder="Escribe un mensaje..." aria-label="Escribe un mensaje">
     <button id="chatSend" aria-label="Enviar">➤</button>
   </div>
 </div>
