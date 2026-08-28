@@ -154,7 +154,7 @@
   .footer-grande{ background:var(--tinta); color:#B8C7BE; padding:64px 0 0; }
   .footer-cols{ display:grid; gap:36px; grid-template-columns:1fr; padding-bottom:40px; }
   @media(min-width:720px){ .footer-cols{ grid-template-columns:1.3fr 1fr 1fr 1fr; } }
-  .footer-cols h4{ color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:16px; }
+  .footer-cols h3{ color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:16px; }
   .footer-cols p{ font-size:13.5px; line-height:1.7; }
   .footer-cols ul{ list-style:none; display:flex; flex-direction:column; gap:10px; }
   .footer-cols ul a{ font-size:13.5px; color:#B8C7BE; transition:color .2s; }
@@ -632,7 +632,7 @@
       <p>Almacén y oficina en Tocoa, Colón, Honduras.</p>
     </div>
     <div class="map-frame">
-      <iframe src="https://www.google.com/maps?q=Tocoa,+Colon,+Honduras&output=embed" loading="lazy" allowfullscreen></iframe>
+      <iframe src="https://www.google.com/maps?q=Tocoa,+Colon,+Honduras&output=embed" loading="lazy" allowfullscreen title="Ubicacion de ALDOAGRO en Tocoa, Colon, Honduras"></iframe>
     </div>
   </div>
 </section>
@@ -646,7 +646,7 @@
         <p style="margin-top:14px;">Maquinaria, repuestos y servicio técnico para explotaciones agrícolas.</p>
       </div>
       <div>
-        <h4>Navegación</h4>
+        <h3>Navegación</h3>
         <ul>
           <li><a href="repuestos.html">Repuestos</a></li>
           <li><a href="servicios.html">Servicios</a></li>
@@ -655,7 +655,7 @@
         </ul>
       </div>
       <div>
-        <h4>Empresa</h4>
+        <h3>Empresa</h3>
         <ul>
           <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
           <li><a href="#opiniones">Opiniones</a></li>
@@ -664,7 +664,7 @@
         </ul>
       </div>
       <div>
-        <h4>Contacto</h4>
+        <h3>Contacto</h3>
         <ul>
           <li><a href="https://wa.me/34722193780">WhatsApp</a></li>
           <li><a href="mailto:contacto@aldoagro.com">contacto@aldoagro.com</a></li>
@@ -746,6 +746,7 @@ const testiDots = document.getElementById('testiDots');
 let testiIndex = 0;
 for(let i=0;i<testiSlides.length;i++){
   const dot = document.createElement('button');
+  dot.setAttribute('aria-label', `Ver testimonio ${i+1}`);
   if(i===0) dot.classList.add('active');
   dot.addEventListener('click', ()=>goToTesti(i));
   testiDots.appendChild(dot);
