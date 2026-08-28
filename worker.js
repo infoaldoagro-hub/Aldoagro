@@ -176,7 +176,7 @@ export default {
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
         "font-src 'self' https://fonts.gstatic.com; " +
         "img-src 'self' data: https:; " +
-        "frame-src https://www.youtube.com https://www.google.com; " +
+        "frame-src https://www.youtube-nocookie.com https://www.google.com; " +
         "connect-src 'self'"
     );
     return response;

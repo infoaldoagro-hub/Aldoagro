@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --verde:#1B8A5A;
+    --verde:#178055;
     --verde-oscuro:#115C3C;
     --verde-claro:#EAF7F0;
     --azul:#2E86AB;
@@ -170,7 +170,7 @@
   .chat-foot{ padding:12px; border-top:1px solid var(--borde); display:flex; gap:8px; }
   .chat-foot input{ flex:1; border:1px solid var(--borde); border-radius:100px; padding:10px 14px; font-family:inherit; font-size:13px; outline:none; }
   .chat-foot button{ border:none; background:var(--verde); color:#fff; width:36px; height:36px; border-radius:50%; cursor:pointer; }
-  .btn-whatsapp{ background:#25D366; color:#fff; }
+  .btn-whatsapp{ background:#0C7838; color:#fff; }
   .btn-whatsapp:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(37,211,102,.3); }
 
   /* Lista de pedido (carrito) */
@@ -198,7 +198,7 @@
   .topbar-logo img{ height:42px; width:163px; display:block; }
   .topbar-actions{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
   @media(max-width:819px){ .topbar-actions{ justify-content:space-between; width:100%; } }
-  .whatsapp-link{ display:flex; align-items:center; gap:6px; color:#25D366; font-weight:700; font-size:15px; }
+  .whatsapp-link{ display:flex; align-items:center; gap:6px; color:#0C7838; font-weight:700; font-size:15px; }
   .whatsapp-link svg{ width:22px; height:22px; }
   .social-link{ display:flex; align-items:center; color:var(--gris); transition:color .2s; }
   .social-link svg{ width:22px; height:22px; }
@@ -312,7 +312,7 @@
 
 <header>
   <div class="topbar">
-    <a href="index.html" class="topbar-logo"><img width="423" height="109" src="imagenes/logo.png" alt="ALDOAGRO"></a>
+    <a href="index.html" class="topbar-logo"><img width="423" height="109" src="imagenes/logo.webp" alt="ALDOAGRO"></a>
     <div class="topbar-actions">
       <a href="https://wa.me/34722193780" target="_blank" class="whatsapp-link">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.7-2.2-1.2-3.1-2.7-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.1 1.7 2.6 4.1 3.6.6.2 1 .4 1.4.5.6.2 1.1.1 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2z"/></svg>
@@ -389,11 +389,11 @@
     </div>
     <div class="hero-visual">
       <iframe
-        src="https://www.youtube.com/embed/I-r4qxFT0iU?autoplay=1&mute=1&loop=1&playlist=I-r4qxFT0iU&controls=0&modestbranding=1&playsinline=1&rel=0"
-        title="ALDOAGRO"
+        data-src="https://www.youtube-nocookie.com/embed/I-r4qxFT0iU?autoplay=1&mute=1&loop=1&playlist=I-r4qxFT0iU&controls=0&modestbranding=1&playsinline=1&rel=0"
+        width="800" height="600"
+        title="Video promocional de ALDOAGRO"
         style="width:100%; height:100%; border:0; pointer-events:none;"
-        allow="autoplay; encrypted-media"
-        loading="lazy">
+        allow="autoplay; encrypted-media">
       </iframe>
     </div>
   </div>
@@ -435,21 +435,21 @@
     </div>
     <div class="logos-carousel">
       <div class="logos-track" id="logosTrack">
-        <div class="logo-slot"><img width="477" height="366" loading="lazy" src="imagenes/marca-john-deere.png" alt="John Deere"></div>
+        <div class="logo-slot"><img width="477" height="366" loading="lazy" src="imagenes/marca-john-deere.webp" alt="John Deere"></div>
         <div class="logo-slot"><img loading="lazy" width="290" height="300" src="imagenes/marca-agco-parts.webp" alt="AGCO Parts"></div>
-        <div class="logo-slot"><img width="225" height="225" loading="lazy" src="imagenes/marca-caterpillar.png" alt="Caterpillar"></div>
-        <div class="logo-slot"><img width="512" height="190" loading="lazy" src="imagenes/marca-claas.png" alt="Claas"></div>
-        <div class="logo-slot"><img width="1920" height="1115" loading="lazy" src="imagenes/marca-cnh-industrial.png" alt="CNH Industrial"></div>
-        <div class="logo-slot"><img width="858" height="291" loading="lazy" src="imagenes/marca-case-construction.png" alt="Case Construction"></div>
-        <div class="logo-slot"><img width="847" height="294" loading="lazy" src="imagenes/marca-case-ih-agriculture.png" alt="Case IH Agriculture"></div>
-        <div class="logo-slot"><img width="666" height="375" loading="lazy" src="imagenes/marca-daf.png" alt="DAF"></div>
-        <div class="logo-slot"><img width="3840" height="1291" loading="lazy" src="imagenes/marca-kubota.png" alt="Kubota"></div>
-        <div class="logo-slot"><img width="2154" height="992" loading="lazy" src="imagenes/marca-sdf.jpg" alt="SDF"></div>
-        <div class="logo-slot"><img width="900" height="229" loading="lazy" src="imagenes/marca-sany.png" alt="Sany"></div>
-        <div class="logo-slot"><img width="800" height="211" loading="lazy" src="imagenes/marca-mccormick.png" alt="McCormick"></div>
-        <div class="logo-slot"><img width="1100" height="619" loading="lazy" src="imagenes/marca-iveco.png" alt="Iveco"></div>
-        <div class="logo-slot"><img width="535" height="94" loading="lazy" src="imagenes/marca-scania.png" alt="Scania"></div>
-        <div class="logo-slot"><img width="360" height="360" loading="lazy" src="imagenes/marca-fendt.png" alt="Fendt"></div>
+        <div class="logo-slot"><img width="225" height="225" loading="lazy" src="imagenes/marca-caterpillar.webp" alt="Caterpillar"></div>
+        <div class="logo-slot"><img width="512" height="190" loading="lazy" src="imagenes/marca-claas.webp" alt="Claas"></div>
+        <div class="logo-slot"><img width="1920" height="1115" loading="lazy" src="imagenes/marca-cnh-industrial.webp" alt="CNH Industrial"></div>
+        <div class="logo-slot"><img width="858" height="291" loading="lazy" src="imagenes/marca-case-construction.webp" alt="Case Construction"></div>
+        <div class="logo-slot"><img width="847" height="294" loading="lazy" src="imagenes/marca-case-ih-agriculture.webp" alt="Case IH Agriculture"></div>
+        <div class="logo-slot"><img width="666" height="375" loading="lazy" src="imagenes/marca-daf.webp" alt="DAF"></div>
+        <div class="logo-slot"><img width="3840" height="1291" loading="lazy" src="imagenes/marca-kubota.webp" alt="Kubota"></div>
+        <div class="logo-slot"><img width="2154" height="992" loading="lazy" src="imagenes/marca-sdf.webp" alt="SDF"></div>
+        <div class="logo-slot"><img width="900" height="229" loading="lazy" src="imagenes/marca-sany.webp" alt="Sany"></div>
+        <div class="logo-slot"><img width="800" height="211" loading="lazy" src="imagenes/marca-mccormick.webp" alt="McCormick"></div>
+        <div class="logo-slot"><img width="1100" height="619" loading="lazy" src="imagenes/marca-iveco.webp" alt="Iveco"></div>
+        <div class="logo-slot"><img width="535" height="94" loading="lazy" src="imagenes/marca-scania.webp" alt="Scania"></div>
+        <div class="logo-slot"><img width="360" height="360" loading="lazy" src="imagenes/marca-fendt.webp" alt="Fendt"></div>
       </div>
     </div>
   </div>
@@ -458,7 +458,7 @@
 <section class="sobre" id="sobre" data-reveal>
   <div class="wrap">
     <div class="sobre-img">
-      <img width="1024" height="1024" loading="lazy" src="imagenes/logoquienessomon.png" alt="ALDOAGRO — Repuestos y Maquinarias">
+      <img width="1024" height="1024" loading="lazy" src="imagenes/logoquienessomon.webp" alt="ALDOAGRO — Repuestos y Maquinarias">
     </div>
     <div>
       <span class="eyebrow" style="background:var(--verde-claro); color:var(--verde-oscuro);">Sobre nosotros</span>
@@ -481,12 +481,12 @@
       <h2>Productos destacados</h2>
     </div>
     <div class="gallery">
-      <figure><img width="1100" height="600" loading="lazy" src="imagenes/producto-tractores.jpg" alt="Tractores"><figcaption>Tractores</figcaption></figure>
-      <figure><img width="1100" height="600" loading="lazy" src="imagenes/producto-implementos.jpg" alt="Implementos"><figcaption>Implementos</figcaption></figure>
-      <figure><img width="811" height="519" loading="lazy" src="imagenes/producto-repuestos.png" alt="Repuestos"><figcaption>Repuestos</figcaption></figure>
-      <figure><img width="1100" height="600" loading="lazy" src="imagenes/producto-mantenimiento.jpg" alt="Mantenimiento"><figcaption>Mantenimiento</figcaption></figure>
-      <figure><img width="1100" height="600" loading="lazy" src="imagenes/producto-cosechadoras.jpg" alt="Cosechadoras"><figcaption>Cosechadoras</figcaption></figure>
-      <figure><img width="1100" height="734" loading="lazy" src="imagenes/producto-arados.jpg" alt="Arados"><figcaption>Arados</figcaption></figure>
+      <figure><img width="1100" height="600" loading="lazy" src="imagenes/producto-tractores.webp" alt="Tractores"><figcaption>Tractores</figcaption></figure>
+      <figure><img width="1100" height="600" loading="lazy" src="imagenes/producto-implementos.webp" alt="Implementos"><figcaption>Implementos</figcaption></figure>
+      <figure><img width="811" height="519" loading="lazy" src="imagenes/producto-repuestos.webp" alt="Repuestos"><figcaption>Repuestos</figcaption></figure>
+      <figure><img width="1100" height="600" loading="lazy" src="imagenes/producto-mantenimiento.webp" alt="Mantenimiento"><figcaption>Mantenimiento</figcaption></figure>
+      <figure><img width="1100" height="600" loading="lazy" src="imagenes/producto-cosechadoras.webp" alt="Cosechadoras"><figcaption>Cosechadoras</figcaption></figure>
+      <figure><img width="1100" height="734" loading="lazy" src="imagenes/producto-arados.webp" alt="Arados"><figcaption>Arados</figcaption></figure>
     </div>
   </div>
 </section>
@@ -553,7 +553,7 @@
         </div>
       </article>
       <article class="news-card">
-        <img width="811" height="519" loading="lazy" src="imagenes/producto-repuestos.png" alt="Repuesto de segunda mano">
+        <img width="811" height="519" loading="lazy" src="imagenes/producto-repuestos.webp" alt="Repuesto de segunda mano">
         <div class="body">
           <span class="date">Agosto 2026</span>
           <h3>Búsqueda de repuestos de segunda mano</h3>
@@ -642,7 +642,7 @@
   <div class="wrap">
     <div class="footer-cols">
       <div>
-        <div class="logo"><img width="423" height="109" src="imagenes/logo.png" alt="ALDOAGRO" style="height:32px; width:124px; filter:brightness(0) invert(1);"></div>
+        <div class="logo"><img width="423" height="109" src="imagenes/logo.webp" alt="ALDOAGRO" style="height:32px; width:124px; filter:brightness(0) invert(1);"></div>
         <p style="margin-top:14px;">Maquinaria, repuestos y servicio técnico para explotaciones agrícolas.</p>
       </div>
       <div>
@@ -709,6 +709,11 @@
 <script src="cart.js"></script>
 <script src="chat.js"></script>
 <script>
+window.addEventListener('load', function(){
+  const heroVideo = document.querySelector('.hero-visual iframe[data-src]');
+  if (heroVideo) heroVideo.src = heroVideo.dataset.src;
+});
+
 const revealEls = document.querySelectorAll('[data-reveal]');
 const revealObserver = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
